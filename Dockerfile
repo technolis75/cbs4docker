@@ -12,7 +12,7 @@ VOLUME /usr/local/cbs/users /usr/local/cbs/logs /usr/local/cbs/conf
 RUN ["sh", "-c", "mkdir /p", "${CBS_HOME}"]
 # COPY resources/cbs-nix.tar.gz 
 WORKDIR ${CBS_HOME} 
-RUN ["sh", "-c", "cp -f", "cbs-nix.tar.gz", "${CBS_HOME}/"]
+# RUN ["sh", "-c", "cp -f", "cbs-nix.tar.gz", "${CBS_HOME}/"]
 # RUN ["sh", "-c", "cp -f", "resources/cbs-nix.tar.gz", "${CBS_HOME}/"]
 RUN ["sh", "-c", "cd", "${CBS_HOME}"]
 # ADD http://192.168.0.77/dev.bo.eplateforme/cbs-nix.tar.gz cbs-nix.tar.gz
