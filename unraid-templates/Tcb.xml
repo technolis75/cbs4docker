@@ -4,7 +4,7 @@
 	<Description>Technolis Cloud Backup - backup your files locally and/or into a cloud</Description>
 	<Registry>https://hub.docker.com/r/technolis75/cbs4pub/</Registry>
 	<Repository>technolis75/cbs4docker</Repository>
-	<BindTime>true</BindTime>
+	<GitHub>https://github.com/technolis75/cbs4docker</GitHub>
 	<Privileged>false</Privileged>
 	<Environment/>
 	<Project>http://www.technolis.fr</Project>
