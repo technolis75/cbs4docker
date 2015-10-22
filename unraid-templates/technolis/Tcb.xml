@@ -33,10 +33,16 @@
 			<Mode>rw</Mode>
 		</Volume>
 		<Volume>
+			<HostDir>/mnt/user/backup/tcb/config</HostDir>
+			<ContainerDir>/usr/local/cbs/conf</ContainerDir>
+			<Mode>rw</Mode>
+		</Volume>
+		<Volume>
 			<HostDir>/mnt/user/backup/tcb/users</HostDir>
 			<ContainerDir>/usr/local/cbs/user</ContainerDir>
 			<Mode>rw</Mode>
 		</Volume>
+		
 	</Data>
 	<Version>latest</Version>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
