@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-	<Name>TCB</Name>
+	<Name>Tcb</Name>
 	<Description>Technolis Cloud Backup - backup your files locally and/or into a cloud</Description>
 	<Registry>https://hub.docker.com/r/technolis75/cbs4pub/</Registry>
 	<Repository>technolis75/cbs4docker</Repository>
