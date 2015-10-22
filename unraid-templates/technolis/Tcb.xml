@@ -3,7 +3,7 @@
 	<Name>Tcb</Name>
 	<Description>Technolis Cloud Backup - backup your files locally and/or into a cloud</Description>
 	<Registry>https://hub.docker.com/r/technolis75/cbs4pub/</Registry>
-	<Repository>technolis75/cbs4docker</Repository>
+	<Repository>technolis75/cbs4pub</Repository>
 	<GitHub>https://github.com/technolis75/cbs4docker</GitHub>
 	<Privileged>false</Privileged>
 	<Environment/>
