@@ -10,7 +10,7 @@
 	<Project>http://www.technolis.fr</Project>
 	<Beta>True</Beta>
 	<Category>Backup: Cloud:</Category>
-	<Date>2015-10-22</Date> 
+	<Date>2015-10-28</Date> 
 	<Networking>
 		<Mode>bridge</Mode>
 		<Publish>
