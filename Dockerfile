@@ -1,15 +1,17 @@
 # This is a comment
-FROM ubuntu:14.04
+# FROM ubuntu:14.04
+FROM centos:7
 MAINTAINER Harry Bonneto <harry.bonneto@technolis.fr>
 EXPOSE 80 443 9444 9445
 ENV CBS_HOME /usr/local/cbs
-ENV USER_HOMES ${CBS_HOME}/users
-ENV LOG_HOMES ${CBS_HOME}/logs
-VOLUME /usr/local/cbs/users /usr/local/cbs/logs /usr/local/cbs/conf 
+RUN ["sh", "-c", "export", "CBS_HOME"]
+# ENV USER_HOME ${CBS_HOME}/user
+# ENV LOG_HOME ${CBS_HOME}/logs
+VOLUME /usr/local/cbs/user /usr/local/cbs/logs /usr/local/cbs/conf
 # /usr/local/cbs/download
 RUN ["sh", "-c", "mkdir /p", "${CBS_HOME}"]
-# COPY resources/cbs-nix.tar.gz 
-WORKDIR ${CBS_HOME} 
+# COPY resources/cbs-nix.tar.gz
+WORKDIR ${CBS_HOME}
 # RUN ["sh", "-c", "cp -f", "cbs-nix.tar.gz", "${CBS_HOME}/"]
 # RUN ["sh", "-c", "cp -f", "resources/cbs-nix.tar.gz", "${CBS_HOME}/"]
 RUN ["sh", "-c", "cd", "${CBS_HOME}"]
