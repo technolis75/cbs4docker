@@ -28,23 +28,23 @@
 	</Networking>
 	<Data>
 		<Volume>
-			<HostDir>/mnt/user/backup/tcb/logs</HostDir>
+			<HostDir>/mnt/user/srvdata/tcb/logs</HostDir>
 			<ContainerDir>/usr/local/cbs/logs</ContainerDir>
 			<Mode>rw</Mode>
 		</Volume>
 		<Volume>
-			<HostDir>/mnt/user/backup/tcb/config</HostDir>
+			<HostDir>/mnt/user/srvdata/tcb/config</HostDir>
 			<ContainerDir>/usr/local/cbs/conf</ContainerDir>
 			<Mode>rw</Mode>
 		</Volume>
 		<Volume>
-			<HostDir>/mnt/user/backup/tcb/users</HostDir>
+			<HostDir>/mnt/user/srvdata/tcb/users</HostDir>
 			<ContainerDir>/usr/local/cbs/user</ContainerDir>
 			<Mode>rw</Mode>
 		</Volume>
 		
 	</Data>
-	<Version>latest</Version>
+	<Version>0.0.1.beta</Version>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
 	<Banner>http://www.technolis.fr/images/logo.png</Banner>
 	<Icon>http://www.technolis.fr/images/S-35-DE5_01.gif</Icon>
