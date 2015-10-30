@@ -6,8 +6,8 @@ ENV CBS_HOME=/usr/local/cbs USER=root
 RUN mkdir /p $CBS_HOME
 # RUN cd $CBS_HOME
 RUN ["sh", "-c", "cd", "${CBS_HOME}"]
-ADD http://ahsay-dn.ahsay.com/v7/7300/cbs-nix.tar.gz cbs-nix.tar.gz
 WORKDIR $CBS_HOME
+ADD http://ahsay-dn.ahsay.com/v7/7300/cbs-nix.tar.gz cbs-nix.tar.gz
 RUN gunzip cbs-nix.tar.gz && tar -xf cbs-nix.tar
 EXPOSE 80 443
 VOLUME /usr/local/cbs/user /usr/local/cbs/logs /usr/local/cbs/conf
