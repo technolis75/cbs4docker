@@ -3,7 +3,7 @@
 FROM centos:7
 MAINTAINER Harry Bonneto <harry.bonneto@technolis.fr>
 EXPOSE 80 443 9444 9445
-ENV CBS_HOME /usr/local/cbs
+ENV CBS_HOME=/usr/local/cbs USER=root
 RUN ["sh", "-c", "export", "CBS_HOME"]
 # ENV USER_HOME ${CBS_HOME}/user
 # ENV LOG_HOME ${CBS_HOME}/logs
