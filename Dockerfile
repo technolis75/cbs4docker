@@ -13,4 +13,5 @@ EXPOSE 80 443
 VOLUME /usr/local/cbs/user /usr/local/cbs/logs /usr/local/cbs/conf
 #CMD ["/usr/local/cbs/bin/install.sh"]
 RUN /usr/local/cbs/bin/install.sh
-CMD ["/usr/local/cbs/bin/install.sh"]
+# CMD ["/usr/local/cbs/bin/install.sh"]
+CMD ["sh", "/etc/init.d/obsr", "start", "&"]
