@@ -14,4 +14,5 @@ VOLUME /usr/local/cbs/user /usr/local/cbs/logs /usr/local/cbs/conf
 #CMD ["/usr/local/cbs/bin/install.sh"]
 RUN /usr/local/cbs/bin/install.sh
 # CMD ["/usr/local/cbs/bin/install.sh"]
-ONBUILD ["sh", "/etc/init.d/obsr", "start", "&"]
+# ONBUILD ["sh", "/etc/init.d/obsr", "start", "&"]
+CMD ["sh", "/etc/init.d/obsr", "start", "&"]
