@@ -44,7 +44,7 @@
 		</Volume>
 		
 	</Data>
-	<Version>0.0.1.beta</Version>
+	<Version>beta</Version>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
 	<Banner>http://www.technolis.fr/images/logo.png</Banner>
 	<Icon>http://www.technolis.fr/images/S-35-DE5_01.gif</Icon>
