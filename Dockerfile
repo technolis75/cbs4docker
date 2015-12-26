@@ -22,9 +22,12 @@ EXPOSE 80 443
 # VOLUME ["/obsr/user", "/obsr/system"]
 
 
-ENV home="/obsr"
-RUN mkdir -p $home
-WORKDIR $home
+ENV CBS_HOME /usr/local/cbs
+ENV USER_HOMES ${CBS_HOME}/users
+ENV LOG_HOMES ${CBS_HOME}/logs
+VOLUME /usr/local/cbs/users /usr/local/cbs/logs /usr/local/cbs/conf
+RUN mkdir -p $CBS_HOME
+WORKDIR $CBS_HOME
 
 
 # Get OBSR tarball into container (local)
