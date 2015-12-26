@@ -29,13 +29,13 @@ WORKDIR $home
 
 # Get OBSR tarball into container (local)
 #    Note: ADD untars local files automatically (COPY does not)
-ADD obsr-nix-6.27.0.0.tar.gz ./
+ADD cbs-nix-7.5.0.0.tar.gz ./
 
 # Get OBSR tarball into container (https)
 # RUN set -x && \
-#    curl -k https://ahsay-dn.ahsay.com/current/obsr-nix.tar.gz -o obsr-nix.tar.gz && \
-#    tar xzf obsr-nix.tar.gz && \
-#    rm obsr-nix.tar.gz
+#    curl -k http://ahsay-dn.ahsay.com/v7/7500/cbs-nix.tar.gz -o cbs-nix.tar.gz && \
+#    tar xzf cbs-nix.tar.gz && \
+#    rm cbs-nix.tar.gz
 
 
 # OBSR tweaks
