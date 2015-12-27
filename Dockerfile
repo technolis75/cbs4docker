@@ -23,9 +23,9 @@ EXPOSE 80 443
 
 
 ENV CBS_HOME /usr/local/cbs
-ENV USER_HOMES ${CBS_HOME}/users
+ENV USER_HOMES ${CBS_HOME}/user
 ENV LOG_HOMES ${CBS_HOME}/logs
-VOLUME /usr/local/cbs/users /usr/local/cbs/logs /usr/local/cbs/conf
+VOLUME /usr/local/cbs/user /usr/local/cbs/logs /usr/local/cbs/conf
 RUN mkdir -p $CBS_HOME
 WORKDIR $CBS_HOME
 
