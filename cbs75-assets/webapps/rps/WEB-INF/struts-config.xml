@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+       "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <!-- ==================================================================== -->
+  <!-- ===================== Form Bean Definitions ======================== -->
+  <!-- ==================================================================== -->
+  <form-beans>
+    <!-- ================================================================== -->
+    <!-- ================= System Form Bean Definitions =================== -->
+    <!-- ================================================================== -->
+    <!-- Server Configuration form bean -->
+    <form-bean      name="editServerConfigForm"
+                    type="com.ahsay.ars.www.system.config.EditServerConfigForm"/>
+    <!-- Show System Logs form bean -->
+    <form-bean      name="showSystemLogForm"
+                    type="com.ahsay.ars.www.system.config.ShowSystemLogForm"/>
+    <!-- Show System Logs form bean -->
+    <form-bean      name="showSystemLogMenuForm"
+                    type="com.ahsay.ars.www.system.config.ShowSystemLogMenuForm"/>					
+    <!-- System Logon Report form bean -->
+    <form-bean      name="systemLogonForm"
+                    type="com.ahsay.ars.www.system.LogonForm"/>
+    <form-bean      name="menuForm"
+                    type="com.ahsay.ars.www.system.MenuForm"/>					
+    <!-- System Logon Report form bean -->
+    <form-bean      name="editRecvForm"
+                    type="com.ahsay.ars.www.system.recv.EditRecvForm"/>
+    <!-- System Logon Report form bean -->
+    <form-bean      name="editNewRecvForm"
+                    type="com.ahsay.ars.www.system.recv.EditNewRecvForm"/>
+    <!-- System Logon Report form bean -->
+    <form-bean      name="listRecvForm"
+                    type="com.ahsay.ars.www.system.recv.ListRecvForm"/>
+    <!-- System Logon Report form bean -->
+    <form-bean      name="listRecvMenuForm"
+                    type="com.ahsay.ars.www.system.recv.ListRecvMenuForm"/>					
+    <!-- List Receiver files -->
+    <form-bean      name="showRecvFilesForm"
+                    type="com.ahsay.ars.www.system.recv.ShowRecvFilesForm"/>
+    <!-- List Retention files -->
+    <form-bean      name="showRecvRetentionForm"
+                    type="com.ahsay.ars.www.system.recv.ShowRecvRetentionForm"/>
+    <!-- System Logon Report form bean -->
+    <form-bean      name="showRecvLogForm"
+                    type="com.ahsay.ars.www.system.recv.ShowRecvLogForm"/>
+    <form-bean      name="showRecvLogMenuForm"
+                    type="com.ahsay.ars.www.system.recv.ShowRecvLogMenuForm"/>						
+    <!-- System Logon Report form bean -->
+    <form-bean      name="showRecvStorageStatForm"
+                    type="com.ahsay.ars.www.system.recv.ShowRecvStorageStatForm"/>					
+    <form-bean      name="frameForm"
+                    type="com.ahsay.ars.www.system.FrameForm"/>				
+    <form-bean      name="newTrafficLimitForm"
+                    type="com.ahsay.ars.www.system.recv.NewTrafficLimitForm"/>						
+  </form-beans>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Global Forward Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <global-forwards>
+    <forward name="system-logon"         path="/jsp/system/redirect2Logon.jsp"/>
+  </global-forwards>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Action Mapping Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <action-mappings>
+    <!-- ================================================================== -->
+    <!-- =============== System Action Mapping Definitions ================ -->
+    <!-- ================================================================== -->
+    <!-- Adminstrative Logon -->
+    <action    path="/system/logon"
+               type="com.ahsay.ars.www.system.Logon"
+               name="systemLogonForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/menu.do"/>
+      <forward name="failure"           path="/jsp/system/logon.jsp"/>
+    </action>
+
+    <action    path="/system/menu"
+               type="com.ahsay.ars.www.system.Menu"
+               name="menuForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/menu.jsp"/>
+      <forward name="failure"           path="/jsp/system/menu.jsp"/>
+    </action>
+	
+    <!-- Edit Server Configuration -->
+    <action    path="/system/config/editServerConfig"
+               type="com.ahsay.ars.www.system.config.EditServerConfig"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/config.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/config.jsp"/>
+    </action>
+	
+    <!-- Edit Server Configuration -->
+    <action    path="/system/config/editServerConfigMenu"
+               type="com.ahsay.ars.www.system.config.EditServerConfigMenu"
+               name="frameForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/configMenu.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/configMenu.jsp"/>
+    </action>
+	
+    <!-- Update Server Configuration -->
+    <action    path="/system/config/updateServerConfig"
+               type="com.ahsay.ars.www.system.config.UpdateServerConfig"
+               name="editServerConfigForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/config/editServerConfig.do"/>
+      <forward name="failure"           path="/system/config/editServerConfig.do"/>
+	</action>
+    <!-- Show System Logs -->
+    <action    path="/system/config/showSystemLog"
+               type="com.ahsay.ars.www.system.config.ShowSystemLog"
+               name="showSystemLogForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/systemLog.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/systemLog.jsp"/>
+    </action>
+	
+    <action    path="/system/config/showSystemLogMenu"
+               type="com.ahsay.ars.www.system.config.ShowSystemLogMenu"
+               name="showSystemLogMenuForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/config/systemLogMenu.jsp"/>
+      <forward name="failure"           path="/jsp/system/config/systemLogMenu.jsp"/>
+    </action>
+	
+    <!-- Adminstrative Logout -->
+    <action    path="/system/logout"
+               type="com.ahsay.ars.www.system.Logout"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/redirect2Logon.jsp"/>
+      <forward name="failure"           path="/jsp/system/redirect2Logon.jsp"/>
+	  <forward name="imc"           path="/system/logon.do"/>
+    </action>
+    <!-- New Receiver : Show add receiver form -->
+    <action    path="/system/recv/editNewRecv"
+               type="com.ahsay.ars.www.system.recv.EditNewRecv"
+               name="editNewRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/addRecv.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/addRecv.jsp"/>
+    </action>
+    <!-- New Receiver : Show add receiver form -->
+    <action    path="/system/recv/editNewRecvMenu"
+               type="com.ahsay.ars.www.system.recv.EditNewRecvMenu"
+               name="frameForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/addRecvMenu.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/addRecvMenu.jsp"/>
+    </action>	
+    <!-- Add Receiver -->
+    <action    path="/system/recv/addRecv"
+               type="com.ahsay.ars.www.system.recv.AddRecv"
+               name="editNewRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/addRecv.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/addRecv.jsp"/>
+    </action>
+    <!-- Show Receiver -->
+    <action    path="/system/recv/showRecv"
+               type="com.ahsay.ars.www.system.recv.ShowRecv"
+               name="editNewRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showRecv.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showRecv.jsp"/>
+    </action>
+    <!-- Show Receiver -->
+    <action    path="/system/recv/editRecv"
+               type="com.ahsay.ars.www.system.recv.EditRecv"
+               name="editRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/editRecv.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/editRecv.jsp"/>
+    </action>
+    <!-- Update Receiver -->
+    <action    path="/system/recv/updateRecv"
+               type="com.ahsay.ars.www.system.recv.UpdateRecv"
+               name="editRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/recv/editRecv.do"/>
+      <forward name="failure"           path="/system/recv/editRecv.do"/>
+    </action>
+    <!-- List Receiver -->
+    <action    path="/system/recv/listRecv"
+               type="com.ahsay.ars.www.system.recv.ListRecv"
+               name="listRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/listRecv.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/listRecv.jsp"/>
+    </action>
+    <!-- List Receiver -->
+    <action    path="/system/recv/listRecvMenu"
+               type="com.ahsay.ars.www.system.recv.ListRecvMenu"
+               name="listRecvMenuForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/listRecvMenu.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/listRecvMenu.jsp"/>
+    </action>	
+    <!-- Remove Receiver -->
+    <action    path="/system/recv/removeRecv"
+               type="com.ahsay.ars.www.system.recv.RemoveRecv"
+               name="listRecvForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/recv/listRecv.do" />
+      <forward name="failure"           path="/system/recv/listRecv.do" />
+    </action>
+    <!-- list receiver files -->
+    <action    path="/system/recv/showRecvFiles"
+               type="com.ahsay.ars.www.system.recv.ShowRecvFiles"
+               name="showRecvFilesForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showRecvFiles.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showRecvFiles.jsp"/>
+    </action>
+    <!-- list retention files -->
+    <action    path="/system/recv/showRecvRetention"
+               type="com.ahsay.ars.www.system.recv.ShowRecvRetention"
+               name="showRecvRetentionForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showRecvRetention.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showRecvRetention.jsp"/>
+    </action>
+    <!-- edit retention files -->
+    <action    path="/system/recv/editRecvRetention"
+               type="com.ahsay.ars.www.system.recv.EditRecvRetention"
+               name="showRecvRetentionForm"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/editRecvRetention.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/editRecvRetention.jsp"/>
+    </action>
+    <!-- edit retention files -->
+    <action    path="/system/recv/startRecvRetentionRestore"
+               type="com.ahsay.ars.www.system.recv.StartRecvRetentionRestore"
+               name="showRecvRetentionForm"
+              scope="session"
+           validate="false">
+      <forward name="failure"           path="/system/recv/showRecvRetention.do"/>
+      <forward name="success"           path="/system/recv/showRecvRetention.do"/>
+    </action>
+    <action    path="/system/recv/suspendRecvRetentionRestore"
+               type="com.ahsay.ars.www.system.recv.SuspendRecvRetentionRestore"
+               name="showRecvRetentionForm"
+              scope="session"
+           validate="false">
+      <forward name="failure"           path="/system/recv/showRecvRetention.do"/>
+      <forward name="success"           path="/system/recv/showRecvRetention.do"/>
+    </action>
+    <!-- Show receiver log -->
+    <action    path="/system/recv/showRecvLog"
+               type="com.ahsay.ars.www.system.recv.ShowRecvLog"
+               name="showRecvLogForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showRecvLog.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showRecvLog.jsp"/>
+    </action>
+	
+    <action    path="/system/recv/showRecvLogMenu"
+               type="com.ahsay.ars.www.system.recv.ShowRecvLogMenu"
+               name="showRecvLogMenuForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showRecvLogMenu.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showRecvLogMenu.jsp"/>
+    </action>	
+    <!-- Show User Storage Statistics -->
+    <action    path="/system/recv/showRecvStorageStat"
+               type="com.ahsay.ars.www.system.recv.ShowRecvStorageStat"
+               name="showRecvStorageStatForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/showStorageStat.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/showStorageStat.jsp"/>
+    </action>
+	
+    <action    path="/system/recv/addTrafficLimit"
+               type="com.ahsay.ars.www.system.recv.AddTrafficLimit"
+               name="newTrafficLimitForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/trafficLimit.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/trafficLimit.jsp"/>
+    </action>
+	
+    <action    path="/system/recv/newTrafficLimit"
+               type="com.ahsay.ars.www.system.recv.NewTrafficLimit"
+               name="newTrafficLimitForm"
+              scope="request"
+           validate="false">
+      <forward name="success"           path="/jsp/system/recv/trafficLimit.jsp"/>
+      <forward name="failure"           path="/jsp/system/recv/trafficLimit.jsp"/>
+    </action>	
+	
+	<!-- Check connector in server.xml to get working local IP and port -->
+	<action    path="/system/ConnectorCheck"
+               type="com.ahsay.ars.www.ConnectorCheck">	   
+    </action>
+	
+    <!-- ================================================================== -->
+    <!-- ================ API Action Mapping Definitions ================== -->
+    <!-- ================================================================== -->
+	<!-- API to test login information for IMC -->
+    <action    path="/api/testConnect"
+               type="com.ahsay.ars.api.TestConnect" >
+    </action>
+	
+    <!-- API to get receiver statistics-->
+    <action    path="/api/GetReceiverStat"
+               type="com.ahsay.ars.api.GetReceiverStat" >
+    </action>	
+	
+	<action    path="/api/json/UpdateServerConfig"
+               type="com.ahsay.ars.api.json.system.config.UpdateServerConfig" >
+	</action>
+	
+	<action    path="/api/json/UpdateReceivers"
+               type="com.ahsay.ars.api.json.system.config.UpdateReceivers" >
+	</action>
+	
+	<action    path="/api/json/RemoveReceiver"
+               type="com.ahsay.ars.api.json.system.config.RemoveReceiver" >
+	</action>
+	
+	<action    path="/api/json/RestoreSnapshot"
+               type="com.ahsay.ars.api.json.system.config.RestoreSnapshot" >
+	</action>	
+	
+	<action    path="/api/json/GetRestoreStatus"
+               type="com.ahsay.ars.api.json.system.config.GetRestoreStatus" >
+	</action>	
+
+	<action    path="/api/json/StopRestore"
+               type="com.ahsay.ars.api.json.system.config.StopRestore" >
+	</action>		
+	
+	<action    path="/api/json/ListReceiver"
+               type="com.ahsay.ars.api.json.system.config.ListReceiver" >
+	</action>	
+	
+  </action-mappings>
+
+  <message-resources parameter="rps-jsp" null="false" />
+
+</struts-config>
+

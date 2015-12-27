@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<!-- ==================================================================== -->
+	<!-- ===================== Form Bean Definitions ======================== -->
+	<!-- ==================================================================== -->
+
+	<form-beans>
+	
+	    <!-- ================================================================== -->
+	    <!-- =================== User Form Bean Definitions =================== -->
+	    <!-- ================================================================== -->
+		
+		<!-- Logon form bean -->
+	    <form-bean	name="loginObsrForm"
+					type="com.ahsay.rdr.www.user.bean.LoginObsrForm"/>
+
+		<!-- ================================================================== -->
+	    <!-- ================= System Form Bean Definitions =================== -->
+	    <!-- ================================================================== -->
+
+		<!-- System Logon Report form bean -->
+		<form-bean	name="systemLogonForm"
+					type="com.ahsay.rdr.www.system.LogonForm"/>
+
+		<form-bean	name="menuForm"
+					type="com.ahsay.rdr.www.system.MenuForm"/>					
+					
+		<!-- Server Configuration form bean -->
+		<form-bean	name="editServerConfigForm"
+					type="com.ahsay.rdr.www.system.config.EditServerConfigForm"/>
+					
+		<form-bean	name="editServerConfigMenuForm"
+					type="com.ahsay.rdr.www.system.config.EditServerConfigMenuForm"/>					
+
+		<!-- License Information form bean -->
+		<form-bean	name="editLicenseForm"
+					type="com.ahsay.rdr.www.system.config.EditLicenseForm"/>
+					
+		<form-bean	name="editLicenseMenuForm"
+					type="com.ahsay.rdr.www.system.config.EditLicenseMenuForm"/>
+
+		<!-- Show System Logs form bean -->
+		<form-bean	name="showSystemLogForm"
+					type="com.ahsay.rdr.www.system.log.ShowSystemLogForm"/>
+					
+		<form-bean	name="showSystemLogMenuForm"
+					type="com.ahsay.rdr.www.system.log.ShowSystemLogMenuForm"/>					
+
+	</form-beans>
+	
+	<!-- ==================================================================== -->
+	<!-- =================== Global Forward Definitions ===================== -->
+	<!-- ==================================================================== -->
+	<global-forwards>
+		<forward name="system-logon"         path="/jsp/system/redirect2Logon.jsp"/>
+	</global-forwards>
+
+	<action-mappings>
+		
+		<!-- ================================================================== -->
+	    <!-- =============== System Action Mapping Definitions ================ -->
+	    <!-- ================================================================== -->
+		
+	    <!-- Adminstrative Logon -->
+	    <action	path="/system/logon"
+				type="com.ahsay.rdr.www.system.Logon"
+				name="systemLogonForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/system/menu.do"/>
+	      <forward name="failure"	path="/jsp/system/logon.jsp"/>
+	    </action>
+
+	    <action	path="/system/menu"
+				type="com.ahsay.rdr.www.system.Menu"
+				name="menuForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/menu.jsp"/>
+	      <forward name="failure"	path="/jsp/system/menu.jsp"/>
+	    </action>
+		
+	    <!-- Adminstrative Logout -->
+	    <action	path="/system/logout"
+				type="com.ahsay.rdr.www.system.Logout"
+				scope="request"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/redirect2Logon.jsp"/>
+	      <forward name="failure"	path="/jsp/system/redirect2Logon.jsp"/>
+		  <forward name="imc"	path="/system/logon.do"/>
+	    </action>
+		
+		<!-- Edit Server Configuration -->
+	    <action	path="/system/config/editServerConfig"
+				type="com.ahsay.rdr.www.system.config.EditServerConfig"
+				name="editServerConfigForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/config/configuration.jsp"/>
+	      <forward name="failure"	path="/jsp/system/config/configuration.jsp"/>
+	    </action>
+		
+	    <action	path="/system/config/editServerConfigMenu"
+				type="com.ahsay.rdr.www.system.config.EditServerConfigMenu"
+				name="editServerConfigMenuForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/config/configurationMenu.jsp"/>
+	      <forward name="failure"	path="/jsp/system/config/configurationMenu.jsp"/>
+	    </action>		
+
+	    <!-- Update Server Configuration -->
+	    <action	path="/system/config/updateServerConfig"
+				type="com.ahsay.rdr.www.system.config.UpdateServerConfig"
+				name="editServerConfigForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/system/config/editServerConfig.do" />
+	      <forward name="failure"	path="/system/config/editServerConfig.do" />
+	    </action>
+		
+		<!-- Remove Backup Server -->
+	    <action	path="/system/config/removeBackupServer"
+				type="com.ahsay.rdr.www.system.config.RemoveBackupServer"
+				name="editServerConfigForm"
+				scope="session"
+				validate="false">
+	      <forward name="success"	path="/system/config/editServerConfig.do" />
+	      <forward name="failure"	path="/system/config/editServerConfig.do" />
+	    </action>
+		
+		<!-- Edit License Configuration -->
+		<action    path="/system/config/editLicense"
+	               type="com.ahsay.rdr.www.system.config.EditLicense"
+				   name="editLicenseForm"
+				   scope="session"
+				   validate="false">
+		  <forward name="success"	path="/jsp/system/config/license.jsp"/>
+		  <forward name="failure"	path="/jsp/system/config/license.jsp"/>
+		</action>
+		
+		<action    path="/system/config/editLicenseMenu"
+	               type="com.ahsay.rdr.www.system.config.EditLicenseMenu"
+				   name="editLicenseMenuForm"
+				   scope="session"
+				   validate="false">
+		  <forward name="success"	path="/jsp/system/config/licenseMenu.jsp"/>
+		  <forward name="failure"	path="/jsp/system/config/licenseMenu.jsp"/>
+		</action>	
+
+		<!-- Update License Configuration -->
+		<action    path="/system/config/updateLicense"
+				   type="com.ahsay.rdr.www.system.config.UpdateLicense"
+				   name="editLicenseForm"
+				   scope="session"
+				   validate="false">
+		  <forward name="success"	path="/system/config/editLicense.do" />
+		  <forward name="failure"	path="/system/config/editLicense.do" />
+		</action>
+
+		<!-- Show System Logs -->
+	    <action	path="/system/log/showSystemLog"
+				type="com.ahsay.rdr.www.system.log.ShowSystemLog"
+				name="showSystemLogForm"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/log/systemLog.jsp"/>
+	      <forward name="failure"	path="/jsp/system/log/systemLog.jsp"/>
+	    </action>
+		
+	    <action	path="/system/log/showSystemLogMenu"
+				type="com.ahsay.rdr.www.system.log.ShowSystemLogMenu"
+				name="showSystemLogMenuForm"
+				validate="false">
+	      <forward name="success"	path="/jsp/system/log/systemLogMenu.jsp"/>
+	      <forward name="failure"	path="/jsp/system/log/systemLogMenu.jsp"/>
+	    </action>	
+		
+		<!-- Get Documents User -->
+	    <action	path="/www/getDocument"
+	            type="com.ahsay.rdr.www.GetDocument">
+	    </action>
+		
+		<!-- Check connector in server.xml to get working local IP and port -->
+		<action	path="/system/ConnectorCheck"
+	            type="com.ahsay.rdr.www.ConnectorCheck">	   
+	    </action>
+
+		<!-- ================================================================== -->
+	    <!-- =============== User Action Mapping Definitions ===================== -->
+	    <!-- ================================================================== -->
+	    <!-- User logon -->
+	    <action	path="/user/loginObsr"
+				type="com.ahsay.rdr.www.user.LoginObsr"
+				name="loginObsrForm"
+				scope="session"
+				validate="false" >
+			<forward name="success"	path="/jsp/user/redirect2ObsUserLogon.jsp"/>
+			<forward name="failure"	path="/jsp/user/logon.jsp"/>
+	    </action>
+
+		<!-- ================================================================== -->
+		<!-- ================ API Action Mapping Definitions ===================== -->
+		<!-- ================================================================== -->
+
+	    <!-- API to validate a user -->
+	    <action	path="/api/CheckNewUser"
+				type="com.ahsay.rdr.api.CheckNewUser" >
+	    </action>
+		
+		<!-- API to get a list of backup servers -->
+	    <action	path="/api/ListBackupServers"
+				type="com.ahsay.rdr.api.ListBackupServers" >
+	    </action>
+		
+		<!-- API to test the update backup set API -->
+	    <action	path="/api/BackupSetTester"
+				type="com.ahsay.rdr.obs.api.BackupSetTester" >
+	    </action>		
+		
+		<!-- API to test connection for IMC -->
+	    <action	path="/api/testConnect"
+				type="com.ahsay.rdr.api.TestConnect" >
+	    </action>	
+
+		<!-- API to get statistics for IMC -->
+	    <action	path="/api/getBackupServerStat"
+				type="com.ahsay.rdr.api.GetBackupServerStat" >
+	    </action>
+
+		<action    path="/api/json/UpdateServerConfig"
+               type="com.ahsay.rdr.api.json.system.config.UpdateServerConfig" >
+		</action>	
+		
+		<action	   path="/api/json/UpdateLicense"
+			   type="com.ahsay.rdr.api.json.system.config.UpdateLicense">
+		</action>		
+	
+		<!-- ================================================================== -->
+		<!-- ================ Forward from OBS context Mapping Definitions ======== -->
+		<!-- ================================================================== -->
+		
+		<action	path="/obm5.5/file/GetSearchFileList"
+				type="com.ahsay.rdr.obs.obc55.GetSearchFileListRqt"
+				scope="session"
+				validate="false"/>
+			   
+		<action	path="/obm5.5/file/StopSearchFileList"
+				type="com.ahsay.rdr.obs.obc55.StopSearchFileListRqt"
+				scope="session"
+				validate="false"/>
+			   
+		<action	path="/obm5.5/file/RefreshSearchFileList"
+				type="com.ahsay.rdr.obs.obc55.RefreshSearchFileListRqt"
+				scope="session"
+				validate="false"/>
+
+		<!-- ================================================================== -->
+		<!-- ====== Restore Action Mapping Definitions For PRE v5.1.0.0 ======= -->
+		<!-- ================================================================== -->
+		
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/obm/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm.ListBackupJob">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/obm/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/obm/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/obm/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/obm/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm.EndRestore">
+	    </action>
+
+		<!-- ================================================================== -->
+	    <!-- ====== Restore Action Mapping Definitions For v5.1.0.0     ======= -->
+	    <!-- ================================================================== -->
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/obm51/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm51.ListBackupJob">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/obm51/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm51.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/obm51/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm51.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/obm51/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm51.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/obm51/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm51.EndRestore">
+	    </action>
+		
+		<!-- ================================================================== -->
+	    <!-- ====== Restore Action Mapping Definitions For v5.2.0.0     ======= -->
+	    <!-- ================================================================== -->
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/obm5.2/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.ListBackupJob">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/obm5.2/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/obm5.2/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/obm5.2/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/obm5.2/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.EndRestore">
+	    </action>
+		
+		<!-- acb -->
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/acb5.2/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.ListBackupJob">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/acb5.2/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/acb5.2/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/acb5.2/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/acb5.2/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm52.EndRestore">
+	    </action>
+		
+		<!-- ================================================================== -->
+	    <!-- ====== Restore Action Mapping Definitions For v5.5.0.0     ======= -->
+	    <!-- ================================================================== -->
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/obm5.5/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupJob">
+	    </action>
+		<!-- List all backup job dates  -->
+	    <action	path="/restore/obm5.5/listBackupJobDate"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupJobDate">
+	    </action>
+		<!-- List all backup job times under a given backup job date  -->
+	    <action	path="/restore/obm5.5/listBackupJobTime"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupJobTime">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/obm5.5/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/obm5.5/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/obm5.5/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/obm5.5/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.EndRestore">
+	    </action>
+		
+		<!-- acb -->
+		<!-- List all files under a given directory  -->
+	    <action	path="/restore/acb5.5/listBackupJob"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupJob">
+	    </action>
+		<!-- List all backup job dates  -->
+	    <action	path="/restore/acb5.5/listBackupJobDate"
+				scope="request"
+				type="com.ahsay.obs.www.restore.obm55.ListBackupJobDate">
+	    </action>
+		<!-- List all backup job times under a given backup job date  -->
+	    <action	path="/restore/acb5.5/listBackupJobTime"
+				scope="request"
+				type="com.ahsay.obs.www.restore.obm55.ListBackupJobTime">
+	    </action>
+	    <!-- List all backup jobs for a given backup set -->
+	    <action	path="/restore/acb5.5/listBackupFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.ListBackupFile">
+	    </action>
+	    <!-- Start restoring files from the server using OBM -->
+	    <action	path="/restore/acb5.5/startRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.StartRestore">
+	    </action>
+	    <!-- Restore a file from the server using OBM -->
+	    <action	path="/restore/acb5.5/restoreFile"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.RestoreFile">
+	    </action>
+	    <!-- End restoring files from the server using OBM -->
+	    <action	path="/restore/acb5.5/endRestore"
+				scope="request"
+				type="com.ahsay.rdr.obs.www.restore.obm55.EndRestore">
+	    </action>
+		
+		<!-- ================================================================== -->
+		<!-- ================ API Action Mapping Definitions ===================== -->
+		<!-- ================================================================== -->
+		
+		<!-- Forward API -->
+	    <action	path="/api/*"
+				scope="request"
+				type="com.ahsay.rdr.obs.api.ForwardApi">
+		</action>
+
+		<!-- Forward API -->
+	    <action	path="/bill/*"
+				scope="request"
+				type="com.ahsay.rdr.obs.api.ForwardApi">
+		</action>
+		
+		<!-- Forward API -->
+	    <action	path="/debug/*"
+				scope="request"
+				type="com.ahsay.rdr.obs.api.ForwardApi">
+		</action>
+		
+		<!-- Forward API -->
+	    <action	path="/init/*"
+				scope="request"
+				type="com.ahsay.rdr.obs.api.ForwardApi">
+		</action>
+		
+	</action-mappings>
+	
+	<message-resources parameter="rdr-jsp" null="false" />
+
+</struts-config>
+

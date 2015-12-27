@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+  <!-- ==================================================================== -->
+  <!-- ===================== Form Bean Definitions ======================== -->
+  <!-- ==================================================================== -->
+
+    <form-beans>
+        <!-- ================================================================== -->
+        <!-- =================== User Form Bean Definitions =================== -->
+        <!-- ================================================================== -->
+        <form-bean name="IndexBean"
+                   type="com.ahsay.cbs.IndexBean" />
+
+        <form-bean name="ShowSystemIndexBean"
+                   type="com.ahsay.cbs.system.system.IndexBean"/>
+
+		<form-bean name="ShowMessageBean"
+                   type="com.ahsay.cbs.monitor.cbs.ShowMessageBean"/>
+
+        <form-bean name="ShowLiveIndexBean"
+                   type="com.ahsay.cbs.monitor.live.IndexBean"/>
+
+        <form-bean name="ShowBackupStatusBean"
+                   type="com.ahsay.cbs.monitor.live.obs.backup.ShowBackupStatusBean"/>
+
+        <form-bean name="ShowRestoreStatusBean"
+                   type="com.ahsay.cbs.monitor.live.obs.restore.ShowRestoreStatusBean"/>
+
+        <form-bean name="ShowConfigurationIndexBean"
+                   type="com.ahsay.cbs.system.config.IndexBean"/>
+
+        <form-bean name="ShowAdvancedIndexBean"
+                   type="com.ahsay.cbs.system.advanced.IndexBean"/>
+
+        <form-bean name="ShowLicenseIndexBean"
+				   type="com.ahsay.cbs.system.lic.IndexBean" />	
+		
+		<form-bean name="ShowDownloadIndexBean"
+                   type="com.ahsay.cbs.system.download.IndexBean"/>
+
+        <form-bean name="CbsMonitorIndexBean"
+                   type="com.ahsay.cbs.monitor.cbs.IndexBean" />
+
+		<form-bean name="ObsMonitorIndexBean"
+				   type="com.ahsay.cbs.monitor.obs.IndexBean" />
+				
+		<form-bean name="ShowCbsSystemLogBean"
+                   type="com.ahsay.cbs.monitor.cbs.ShowSystemLogBean"/>
+				   
+		<form-bean name="ShowObsSystemLogBean"
+                   type="com.ahsay.cbs.monitor.obs.ShowSystemLogBean"/>
+					
+		<form-bean name="ShowObsReplicationLogBean"
+                   type="com.ahsay.cbs.monitor.rps.ShowObsReplicationLogBean"/>
+			
+		<form-bean name="ShowBackupErrorBean"
+                   type="com.ahsay.cbs.monitor.obs.ShowBackupErrorBean"/>
+					
+		<form-bean name="ShowBackupJobBean"
+                   type="com.ahsay.cbs.monitor.obs.ShowBackupJobBean"/>
+					
+		<form-bean name="ShowRestoredFileBean"
+                   type="com.ahsay.cbs.monitor.obs.ShowRestoredFileBean"/>
+			
+		<form-bean name="showAdminLogBean"
+                   type="com.ahsay.cbs.monitor.cbs.ShowAdminLogBean"/>
+				   
+		<form-bean name="ShowBackupSetBean"
+                   type="com.ahsay.cbs.monitor.obs.ShowBackupSetBean"/>
+
+		<form-bean name="showSnmpLogBean"
+                   type="com.ahsay.cbs.monitor.cbs.ShowSnmpLogBean"/>
+
+		<form-bean name="EditConfigBean"
+                   type="com.ahsay.cbs.obs.access.config.EditConfigBean"/>
+				   
+		<form-bean name="ShowAccessBean"
+                   type="com.ahsay.cbs.obs.access.ShowAccessBean"/>
+
+		<form-bean name="EditUserBean"
+                   type="com.ahsay.cbs.obs.access.user.EditUserBean"/>
+
+		<form-bean name="EditAutoUpdateBean"
+                   type="com.ahsay.cbs.obs.access.user.autoUpdate.EditAutoUpdateBean"/>
+				   
+		<form-bean name="EditBroadcastBean"
+                   type="com.ahsay.cbs.obs.access.user.broadcast.EditBroadcastBean"/>
+
+		<form-bean name="EditChangeOwnershipBean"
+                   type="com.ahsay.cbs.obs.access.user.changeOwnership.EditChangeOwnershipBean"/>
+
+		<form-bean name="EditBackupUsersBean"
+                   type="com.ahsay.cbs.obs.access.user.backupUsers.EditBackupUsersBean"/>
+
+		<form-bean name="EditRestoreFilesBean"
+                   type="com.ahsay.cbs.obs.access.user.restoreFiles.EditRestoreFilesBean"/>
+				   
+		<form-bean name="EditValidationBean"
+                   type="com.ahsay.cbs.obs.access.user.validation.EditValidationBean"/>
+				   
+		<form-bean name="EditExportBean"
+                   type="com.ahsay.cbs.obs.access.user.export.EditExportBean"/>
+				   
+		<form-bean name="EditContactBean"
+                   type="com.ahsay.cbs.obs.access.user.profile.EditContactBean"/>
+		
+		<form-bean name="EditAddUserGroupsBean"
+                   type="com.ahsay.cbs.obs.access.user.profile.EditAddUserGroupsBean"/>
+
+		<form-bean name="ResetPasswordBean"
+                   type="com.ahsay.cbs.obs.access.user.profile.ResetPasswordBean"/>
+				
+		<form-bean name="UploadReceiverDigitalCertificateForm"
+                   type="com.ahsay.cbs.obs.access.user.profile.UploadReceiverDigitalCertificateForm"/>
+				
+		<form-bean name="EditBackupSetBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.EditBackupSetBean"/>
+
+		<form-bean name="EditGeneralBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.general.EditGeneralBean"/>
+				   
+		<form-bean name="EditSourceBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.source.EditSourceBean"/>
+				   
+		<form-bean name="EditBackupSourceBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.source.EditBackupSourceBean"/>
+				   
+		<form-bean name="EditFilterBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.source.EditFilterBean"/>
+
+		<form-bean name="EditPatternBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.source.EditPatternBean"/>
+
+		<form-bean name="EditSchedulesBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.schedule.EditSchedulesBean"/>
+				   
+		<form-bean name="EditScheduleBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.schedule.EditScheduleBean"/>
+				   
+		<form-bean name="EditCdpBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.cdp.EditCdpBean"/>
+		
+        <form-bean name="EditExcludeFilterBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.cdp.EditExcludeFilterBean"/>
+
+		<form-bean name="EditDestinationsBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditDestinationsBean"/>
+
+		<form-bean name="EditDestinationBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditDestinationBean"/>
+
+	    <form-bean name="EditPooledDestinationBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditDestinationBean"/>
+
+		<form-bean name="EditAddSysDestinationBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditAddSysDestinationBean"/>
+				   
+		<form-bean name="EditInFileDeltaBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.inFileDelta.EditInFileDeltaBean"/>
+		
+		<form-bean name="EditRetentionPolicyBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.retentionPolicy.EditRetentionPolicyBean"/>
+		
+		<form-bean name="EditAdvancedPolicyBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.retentionPolicy.EditAdvancedPolicyBean"/>
+
+		<form-bean name="EditCommandsBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.command.EditCommandsBean"/>
+				   
+		<form-bean name="EditCommandBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.command.EditCommandBean"/>
+
+		<form-bean name="EditReminderBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.reminder.EditReminderBean"/>
+		
+		<form-bean name="EditBandwidthControlsBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.bandwidthControl.EditBandwidthControlsBean"/>
+
+		<form-bean name="EditBandwidthControlBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.bandwidthControl.EditBandwidthControlBean"/>
+		
+		<form-bean name="EditAllowedIPsBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.allowedIP.EditAllowedIPsBean"/>
+				   
+		<form-bean name="EditAllowedIPBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.allowedIP.EditAllowedIPBean"/>
+				   
+		<form-bean name="EditOthersBean"
+                   type="com.ahsay.cbs.obs.access.user.backupSet.others.EditOthersBean"/>
+
+		<form-bean name="EditBackupReportBean"
+                   type="com.ahsay.cbs.obs.access.user.report.EditBackupReportBean"/>
+
+		<form-bean name="EditRestoreReportBean"
+                   type="com.ahsay.cbs.obs.access.user.report.EditRestoreReportBean"/>				   
+
+		<form-bean name="EditLogBean"
+                   type="com.ahsay.cbs.obs.access.user.report.EditLogBean"/>
+
+		<form-bean name="EditUserGroupBean"
+                   type="com.ahsay.cbs.obs.access.userGroup.EditUserGroupBean"/>
+
+		<form-bean name="EditAddPolicyBean"
+                   type="com.ahsay.cbs.obs.access.userGroup.EditAddPolicyBean"/>
+
+		<form-bean name="EditBillingContactBean"
+					type="com.ahsay.cbs.obs.access.userGroup.EditBillingContactBean"/>
+				   
+		<form-bean name="EditPolicyBean"
+                   type="com.ahsay.cbs.obs.policy.EditPolicyBean"/>
+				   
+		<form-bean name="EditCustomDestinationBean"
+                   type="com.ahsay.cbs.obs.policy.userSettings.EditCustomDestinationBean"/>
+
+		<form-bean 		name="BillingIndexBean"
+                   type="com.ahsay.cbs.obs.bill.BillingIndexBean"/>			   
+				   
+		<form-bean 		name="ListPackagesBean"
+                    type="com.ahsay.cbs.obs.bill.billPackage.ListPackagesBean"/>
+					
+		<form-bean      name="EditPackageBean"
+					type="com.ahsay.cbs.obs.bill.billPackage.EditPackageBean"/>
+						
+		<form-bean      name="EditMonthlyUsageBean"
+					type="com.ahsay.cbs.obs.bill.billPackage.EditMonthlyUsageBean"/>
+
+		<form-bean      name="EditSettingsBean"
+					type="com.ahsay.cbs.obs.bill.setting.EditSettingsBean"/>
+
+		<form-bean      name="ListPaymentHistoryBean"
+					type="com.ahsay.cbs.obs.bill.paymentHistory.ListPaymentHistoryBean"/>
+
+		<form-bean      name="ShowPaymentStatementBean"
+					type="com.ahsay.cbs.obs.bill.paymentHistory.ShowPaymentStatementBean"/>
+
+		<form-bean      name="ListPaymentItemBean"
+					type="com.ahsay.cbs.obs.bill.paymentHistory.ListPaymentItemBean"/>
+
+		<!-- Show Dashboard form bean -->
+		<form-bean name="ShowDashboardBean"
+                   type="com.ahsay.cbs.system.config.dashboard.ShowDashboardBean"/>
+		
+		<!-- Show System Status form bean -->
+		<form-bean name="ShowSystemStatusBean"
+                   type="com.ahsay.cbs.system.system.ShowSystemStatusBean"/>
+		
+		<form-bean name="ShowThreadsBean"
+                   type="com.ahsay.cbs.system.system.ShowThreadsBean"/>
+
+		<!-- List User Status form bean -->
+        <form-bean name="ShowUserStatusBean"
+                   type="com.ahsay.cbs.monitor.live.obs.ShowUserStatusBean"/>
+
+        <form-bean name="ListBackupStatusBean"
+                   type="com.ahsay.cbs.monitor.live.obs.backup.ListBackupStatusBean"/>
+		
+		<!-- Edit Config form bean -->
+		<form-bean name="EditEmailServerSettingBean"
+                   type="com.ahsay.cbs.system.config.email.EditEmailServerSettingBean"/>
+				   
+		<form-bean name="EditServerSettingBean"
+                   type="com.ahsay.cbs.system.config.system.EditServerSettingBean"/>
+				   
+		<form-bean name="EditAdminContactBean"
+                   type="com.ahsay.cbs.system.config.email.EditAdminContactBean"/>
+
+		<form-bean name="EditLanguageBean"
+                   type="com.ahsay.cbs.system.config.languages.EditLanguageBean"/>
+
+		<form-bean name="EditProxyExcludeHostBean"
+                   type="com.ahsay.cbs.system.advanced.proxy.EditProxyExcludeHostBean"/>
+				   
+		<form-bean name="EditSysUserBean"
+                   type="com.ahsay.cbs.system.config.accounts.EditSysUserBean"/>
+
+		<form-bean name="AddDelegateAdminBean"
+                   type="com.ahsay.cbs.system.config.accounts.AddDelegateAdminBean"/>
+				   
+		<form-bean name="EditAddUserHomeBean"
+                   type="com.ahsay.cbs.system.config.accounts.EditAddUserHomeBean"/>
+
+		<form-bean name="EditPropertiesBean"
+                   type="com.ahsay.cbs.system.config.accounts.EditPropertiesBean"/>
+
+		<form-bean name="ImportBrandingBean"
+                   type="com.ahsay.cbs.system.config.accounts.ImportBrandingBean"/>
+
+		<form-bean name="EditSysBroadcastBean"
+                   type="com.ahsay.cbs.system.config.accounts.broadcast.EditSysBroadcastBean"/>
+				   
+		<form-bean name="NewSslBean"
+                   type="com.ahsay.cbs.system.config.cert.NewSslBean"/>
+				   
+		<!-- Show Advanced form bean -->
+		<form-bean name="EditDebugBean"
+                   type="com.ahsay.cbs.system.advanced.debug.EditDebugBean"/>
+
+		<form-bean name="EditAllowedIPOnServerBean"
+                   type="com.ahsay.cbs.system.advanced.allowedIP.EditAllowedIPOnServerBean"/>		   
+
+		<form-bean name="ConfigIndexBean"
+				   type="com.ahsay.cbs.obs.config.IndexBean" />	
+				   
+		<!-- Server Configuration form bean -->
+		<form-bean name="editServerConfigForm"
+                   type="com.ahsay.obs.www.system.config.EditServerConfigForm"/>			   
+     
+		<form-bean name="EditUserHomeBean"
+                   type="com.ahsay.cbs.obs.config.EditUserHomeBean"/>
+				   
+		<form-bean name="EditRestoreSettingBean"
+                   type="com.ahsay.cbs.system.advanced.EditRestoreSettingBean"/>
+
+		<form-bean name="ObsReplicateIndexBean"
+                   type="com.ahsay.cbs.obs.replicate.IndexBean" />
+
+		<form-bean name="editObsTrafficLimitBean"
+                   type="com.ahsay.cbs.obs.replicate.EditTrafficLimitBean"/>
+
+		<form-bean name="AddRepUserBean"
+                   type="com.ahsay.cbs.obs.replicate.AddRepUserBean"/>
+				   
+		<form-bean name="AddRepBSetBean"
+                   type="com.ahsay.cbs.obs.replicate.AddRepBSetBean"/>
+
+        <form-bean name="ObsRedirectIndexBean"
+                   type="com.ahsay.cbs.obs.redirect.IndexBean" />
+
+        <!-- Show rps system log bean -->
+		<form-bean name="RpsMonitorIndexBean"
+                   type="com.ahsay.cbs.monitor.rps.IndexBean"/>
+				   
+		<form-bean name="ShowRpsSystemLogBean"
+                   type="com.ahsay.cbs.monitor.rps.ShowSystemLogBean"/>
+		
+		<form-bean name="ShowRpsReplicationLogBean"
+                   type="com.ahsay.cbs.monitor.rps.ShowRpsReplicationLogBean"/>
+				   
+		<form-bean name="RpsConfigIndexBean"
+                   type="com.ahsay.cbs.rps.config.IndexBean"/>
+		
+		<form-bean name="EditRpsServerConfigBean"
+                   type="com.ahsay.cbs.rps.config.system.EditServerConfigBean"/>
+		
+		<form-bean name="ListRpsEmailServersBean"
+                   type="com.ahsay.cbs.rps.config.system.ListEmailServersBean"/>
+				   
+		<form-bean name="AddRpsEmailServerBean"
+                   type="com.ahsay.cbs.rps.config.system.AddEmailServerBean"/>		   
+		
+		<form-bean name="ListReceiversBean"
+                   type="com.ahsay.cbs.rps.config.receiver.ListReceiversBean"/>	
+		
+		<form-bean name="EditReceiverBean"
+                   type="com.ahsay.cbs.rps.config.receiver.EditReceiverBean"/>		
+		
+		<form-bean name="ListTrafficLimitBean"
+                   type="com.ahsay.cbs.rps.config.receiver.ListTrafficLimitBean"/>	
+					
+		<form-bean name="EditRpsTrafficLimitBean"
+                   type="com.ahsay.cbs.rps.config.receiver.EditTrafficLimitBean"/>			
+
+		<form-bean name="RestoreSnapshotBean"
+                   type="com.ahsay.cbs.rps.config.receiver.RestoreSnapshotBean"/>							   				   
+
+		<form-bean name="ListIPRestrictionBean"
+                   type="com.ahsay.cbs.rps.config.receiver.ListIPRestrictionBean"/>	
+					
+		<form-bean name="EditIPRestrictionBean"
+                   type="com.ahsay.cbs.rps.config.receiver.EditIPRestrictionBean"/>
+
+        <!-- RDR -->
+		<form-bean name="RdrMonitorIndexBean"
+                   type="com.ahsay.cbs.monitor.rdr.IndexBean"/>
+				   
+		<form-bean name="ShowRdrSystemLogBean"
+                   type="com.ahsay.cbs.monitor.rdr.ShowSystemLogBean"/>	
+
+		<form-bean name="RdrConfigIndexBean"
+                   type="com.ahsay.cbs.rdr.config.IndexBean"/>
+				   
+		<form-bean name="ShowRdrServerConfigBean"
+                   type="com.ahsay.cbs.rdr.config.system.ShowServerConfigBean"/>	
+
+		<form-bean name="ListRdrEmailServersBean"
+                   type="com.ahsay.cbs.rdr.config.system.ListEmailServersBean"/>
+				   
+		<form-bean name="AddRdrEmailServerBean"
+                   type="com.ahsay.cbs.rdr.config.system.AddEmailServerBean"/>	
+				   
+		<form-bean name="EditBackupServerBean"
+                   type="com.ahsay.cbs.rdr.config.system.EditBackupServerBean"/>
+				   
+        <form-bean name="LogonForm"
+                   type="com.ahsay.cbs.LogonForm"/>		
+
+		<form-bean name="GetForgotPwdForm"
+                   type="com.ahsay.cbs.GetForgotPwdForm"/>				   
+
+		<form-bean name="UploadDigitalCertificateForm"
+                   type="com.ahsay.cbs.system.config.email.UploadDigitalCertificateForm"/>
+
+		<form-bean name="ShowHelpIndexBean"
+                   type="com.ahsay.cbs.help.IndexBean"/>		
+
+		<form-bean name="ShowSystemFileBean"
+                   type="com.ahsay.cbs.system.advanced.restore.ShowSystemFileBean"/>
+				   
+		<form-bean name="UploadCertificateForm"
+                   type="com.ahsay.cbs.system.config.cert.UploadCertificateForm"/>
+				   
+		<form-bean name="RedirectConnectionBean"
+                   type="com.ahsay.cbs.system.config.system.RedirectConnectionBean"/>		   
+	
+
+    </form-beans>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Global Forward Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <global-forwards>
+	<forward name="system-logon"         path="/redirect2Logon.jsp"/>
+  </global-forwards>
+
+  <!-- ==================================================================== -->
+  <!-- =================== Action Mapping Definitions ===================== -->
+  <!-- ==================================================================== -->
+  <action-mappings>
+
+    <!-- ================================================================== -->
+    <!-- ================= Edit Test Mapping Definitions ================== -->
+    <!-- ================================================================== -->
+	<action    path="/index"
+               type="com.ahsay.cbs.Index"
+               name="IndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/index.jsp" />
+		  <forward name="successReseller"	path="/indexReseller.jsp" />
+          <forward name="failure"	path="/redirect2Logon.jsp" />
+	</action>
+
+	<action    path="/system/ShowSystem"
+               type="com.ahsay.cbs.system.system.Index"
+               name="ShowSystemIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/system/system/index.jsp" />
+          <forward name="failure"	path="/system/system/index.jsp" />
+	</action>
+
+	<action    path="/monitor/cbs/ShowMessage"
+               type="com.ahsay.cbs.monitor.cbs.ShowMessage"
+               name="ShowMessageBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/monitor/cbs/showMessage.jsp" />
+          <forward name="failure"	path="/monitor/cbs/showMessage.jsp" />
+	</action>
+
+	<action    path="/monitor/live/Index"
+               type="com.ahsay.cbs.monitor.live.Index"
+               name="ShowLiveIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/live/index.jsp" />
+      <forward name="failure"	path="/monitor/live/index.jsp" />
+	</action>
+
+	<action    path="/monitor/live/ShowBackupStatus"
+               type="com.ahsay.cbs.monitor.live.obs.backup.ShowBackupStatus"
+               name="ShowBackupStatusBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/live/obs/backup/showBackupStatus.jsp" />
+      <forward name="failure"	path="/monitor/live/obs/backup/showBackupStatus.jsp" />
+	</action>
+
+	<action    path="/monitor/live/ShowRestoreStatus"
+               type="com.ahsay.cbs.monitor.live.obs.restore.ShowRestoreStatus"
+               name="ShowRestoreStatusBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/live/obs/restore/showRestoreStatus.jsp" />
+      <forward name="failure"	path="/monitor/live/obs/restore/showRestoreStatus.jsp" />
+	</action>
+	
+	<action    path="/system/ShowConfiguration"
+               type="com.ahsay.cbs.system.config.Index"
+               name="ShowConfigurationIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="addServerSetting"		path="/system/config/system/editServerSetting.do" redirect="true" />
+          <forward name="addEmailServerSetting"	path="/system/config/email/editEmailServerSetting.do" redirect="true" />
+          <forward name="addAdminContact"       path="/system/config/email/editAdminContact.do" redirect="true" />
+          <forward name="createDest"            path="/system/config/destination/EditDestination.do" redirect="true" />
+          <forward name="createLang"      		path="/system/config/languages/EditLanguage.do" redirect="true" />
+		  <forward name="addSysUser" 			path="/system/config/accounts/EditSysUser.do" redirect="true" />
+		  <forward name="saveSuccess"			path="/system/config/index.jsp?success=true"/>		  
+          <forward name="success"				path="/system/config/index.jsp" />
+		  <forward name="addSslCertificate"		path="/system/config/cert/NewSsl.do" redirect="true" />
+		  <forward name="redirectConnection"	path="/system/config/system/RedirectConnection.do" redirect="true"/>
+		  <forward name="message"				path="/system/config/accounts/broadcast/EditSysBroadcast.do" redirect="true" />
+          <forward name="failure"				path="/system/config/index.jsp" />
+	</action>
+	
+	<action    path="/system/config/system/RedirectConnection"
+               type="com.ahsay.cbs.system.config.system.RedirectConnection"
+               name="RedirectConnectionBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/system/config/system/redirectConnection.jsp" />
+          <forward name="failure"	path="/system/config/system/redirectConnection.jsp" />
+	</action>
+	
+	<action    path="/system/ShowAdvanced"
+               type="com.ahsay.cbs.system.advanced.Index"
+               name="ShowAdvancedIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="addDebugOption"    path="/system/advanced/debug/editDebug.do" redirect="true"/>
+          <forward name="addAllowedIPOnServer"    path="/system/advanced/allowedIP/editAllowedIPOnServer.do" redirect="true"/>
+          <forward name="createExcludeHost" path="/system/advanced/proxy/EditProxyExcludeHost.do" redirect="true" />
+          <forward name="success"	path="/system/advanced/index.jsp" />
+          <forward name="failure"	path="/system/advanced/index.jsp" />
+	</action>
+
+	<action    path="/system/ShowLicense"
+               type="com.ahsay.cbs.system.lic.Index"
+               name="ShowLicenseIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/system/lic/index.jsp" />	
+	  <forward name="failure"    	  path="/system/lic/index.jsp" />	
+	</action>	
+	
+	<action    path="/system/ShowDownload"
+               type="com.ahsay.cbs.system.download.Index"
+               name="ShowDownloadIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/system/download/index.jsp" />
+		  <forward name="notAuth"	path="/system/download/index.jsp" />
+          <forward name="failure"	path="/system/download/index.jsp" />
+	</action>
+
+	<action    path="/monitor/cbs/Index"
+               type="com.ahsay.cbs.monitor.cbs.Index"
+               name="CbsMonitorIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/monitor/cbs/index.jsp" />
+	</action>
+
+	<action    path="/monitor/obs/Index"
+               type="com.ahsay.cbs.monitor.obs.Index"
+               name="ObsMonitorIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/monitor/obs/index.jsp" />	
+	</action>	
+	
+	<action    path="/obs/config/Index"
+               type="com.ahsay.cbs.obs.config.Index"
+               name="ConfigIndexBean"
+              scope="session"
+           validate="false" >
+	  <forward name="createHome"      path="/system/config/EditUserHome.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-config/index.jsp" />
+	  <forward name="failure"    	  path="/obs-config/index.jsp" />	
+	</action>		
+	
+    <!-- Show System Logs -->
+    <action    path="/monitor/obs/showSystemLog"
+               type="com.ahsay.cbs.monitor.obs.ShowSystemLog"
+               name="ShowObsSystemLogBean"
+			validate="false">
+      <forward name="success"           path="/monitor/obs/systemLog.jsp"/>
+      <forward name="failure"           path="/monitor/obs/systemLog.jsp"/>
+    </action> 
+
+    <!-- Show Backup Jobs -->
+    <action    path="/monitor/obs/showBackupJob"
+               type="com.ahsay.cbs.monitor.obs.ShowBackupJob"
+               name="ShowBackupJobBean"
+           validate="false">
+      <forward name="success"           path="/monitor/obs/backupJob.jsp"/>
+      <forward name="failure"           path="/monitor/obs/backupJob.jsp"/>
+    </action>
+	
+    <!-- Show Restored File -->
+
+    <action    path="/monitor/obs/showRestoredFile"
+               type="com.ahsay.cbs.monitor.obs.ShowRestoredFile"
+               name="ShowRestoredFileBean"
+           validate="false">
+      <forward name="success"           path="/monitor/obs/restoredFile.jsp"/>
+      <forward name="failure"           path="/monitor/obs/restoredFile.jsp"/>
+    </action>
+
+    <!-- Show Backup Error -->
+    <action    path="/monitor/obs/showBackupError"
+               type="com.ahsay.cbs.monitor.obs.ShowBackupError"
+               name="ShowBackupErrorBean"
+               validate="false">
+      <forward name="success"           path="/monitor/obs/backupError.jsp"/>
+      <forward name="failure"           path="/monitor/obs/backupError.jsp"/>
+    </action>
+
+    <!-- Show Replication Logs -->
+    <action    path="/monitor/rps/showObsReplicationLog"
+               type="com.ahsay.cbs.monitor.rps.ShowObsReplicationLog"
+               name="ShowObsReplicationLogBean"
+               validate="false">
+      <forward name="success"           path="/monitor/rps/obsReplicationLog.jsp"/>
+      <forward name="failure"           path="/monitor/rps/obsReplicationLog.jsp"/>
+    </action>
+	
+    <!-- Show Admin Logs -->
+    <action    path="/monitor/cbs/showAdminLog"
+               type="com.ahsay.cbs.monitor.cbs.ShowAdminLog"
+               name="showAdminLogBean"
+               validate="false">
+      <forward name="success"           path="/monitor/cbs/adminLog.jsp"/>
+      <forward name="failure"           path="/monitor/cbs/adminLog.jsp"/>
+    </action>
+
+	<!-- Show backup set Logs -->
+    <action    path="/monitor/log/showBackupSet"
+               type="com.ahsay.cbs.monitor.obs.ShowBackupSet"
+               name="ShowBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/monitor/obs/backupSet.jsp"/>
+      <forward name="failure"           path="/monitor/obs/backupSet.jsp"/>
+    </action>	
+
+    <!-- Show SNMP Logs -->
+    <action    path="/monitor/cbs/showSnmpLog"
+               type="com.ahsay.cbs.monitor.cbs.ShowSnmpLog"
+               name="showSnmpLogBean"
+               validate="false">
+      <forward name="success"           path="/monitor/cbs/snmp.jsp"/>
+      <forward name="failure"           path="/monitor/cbs/snmp.jsp"/>
+    </action>
+	
+	<action    path="/obs/access/config/EditConfig"
+               type="com.ahsay.cbs.obs.access.config.EditConfig"
+               name="EditConfigBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"		path="/obs-access/config/editConfig.jsp" />
+      <forward name="failure"		path="/obs-access/config/editConfig.jsp" />
+    </action>
+	
+	<action    path="/obs/access/ShowAccess"
+               type="com.ahsay.cbs.obs.access.ShowAccess"
+               name="ShowAccessBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addUser"		path="/obs/access/user/EditUser.do" redirect="true" />
+	  <forward name="autoupdate"	path="/obs/access/user/autoUpdate/EditAutoUpdate.do" redirect="true" />
+	  <forward name="message"		path="/obs/access/user/broadcast/EditBroadcast.do" redirect="true" />
+	  <forward name="changeowner"	path="/obs/access/user/changeOwnership/EditChangeOwnership.do" redirect="true" />
+	  <forward name="backupUsers"	path="/obs/access/user/backupUsers/EditBackupUsers.do" redirect="true" />
+	  <forward name="restoreFiles"	path="/obs/access/user/restoreFiles/EditRestoreFiles.do" redirect="true" />
+	  <forward name="validation"	path="/obs/access/user/validation/EditValidation.do" redirect="true" />
+	  <forward name="addUserGroup"	path="/obs/access/userGroup/EditUserGroup.do" redirect="true" />
+	  <forward name="exportUser"	path="/obs/access/user/export/EditExport.do" redirect="true" />
+	  <forward name="addPolicy"	    path="/obs/policy/EditPolicy.do" redirect="true" />
+      <forward name="success"		path="/obs-access/index.jsp" />
+      <forward name="failure"		path="/obs-access/index.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/EditUser"
+               type="com.ahsay.cbs.obs.access.user.EditUser"
+               name="EditUserBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addUserGroup"		path="/obs/access/user/profile/EditAddUserGroups.do" redirect="true" />
+	  <forward name="addBackupSet"		path="/obs/access/user/backupSet/EditBackupSet.do" redirect="true" />
+	  <forward name="addContact"		path="/obs/access/user/profile/EditContact.do" redirect="true" />
+	  <forward name="addUser"			path="/obs-access/user/profile/addUser.jsp" />
+	  <forward name="success"			path="/obs-access/user/editUser.jsp" />
+      <forward name="failure"			path="/obs-access/user/editUser.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/autoUpdate/EditAutoUpdate"
+               type="com.ahsay.cbs.obs.access.user.autoUpdate.EditAutoUpdate"
+               name="EditAutoUpdateBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/autoUpdate/editAutoUpdate.jsp" />
+      <forward name="failure"	path="/obs-access/user/autoUpdate/editAutoUpdate.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/export/EditExport"
+               type="com.ahsay.cbs.obs.access.user.export.EditExport"
+               name="EditExportBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"		path="/obs-access/user/export/editExport.jsp" />
+      <forward name="failure"		path="/obs-access/user/export/editExport.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/broadcast/EditBroadcast"
+               type="com.ahsay.cbs.obs.access.user.broadcast.EditBroadcast"
+               name="EditBroadcastBean"
+              scope="session"
+           validate="false" >
+	  <forward name="sendSuccess"	path="/obs-access/user/broadcast/editBroadcast.jsp?success=true"/>
+	  <forward name="success"		path="/obs-access/user/broadcast/editBroadcast.jsp" />
+      <forward name="failure"		path="/obs-access/user/broadcast/editBroadcast.jsp" />
+    </action>
+
+	<action    path="/obs/access/user/changeOwnership/EditChangeOwnership"
+               type="com.ahsay.cbs.obs.access.user.changeOwnership.EditChangeOwnership"
+               name="EditChangeOwnershipBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/changeOwnership/editChangeOwnership.jsp" />
+      <forward name="failure"	path="/obs-access/user/changeOwnership/editChangeOwnership.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupUsers/EditBackupUsers"
+               type="com.ahsay.cbs.obs.access.user.backupUsers.EditBackupUsers"
+               name="EditBackupUsersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupUsers/editBackupUsers.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupUsers/editBackupUsers.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/restoreFiles/EditRestoreFiles"
+               type="com.ahsay.cbs.obs.access.user.restoreFiles.EditRestoreFiles"
+               name="EditRestoreFilesBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/restoreFiles/editRestoreFiles.jsp" />
+      <forward name="failure"	path="/obs-access/user/restoreFiles/editRestoreFiles.jsp" />
+    </action>
+
+	<action    path="/obs/access/user/validation/EditValidation"
+               type="com.ahsay.cbs.obs.access.user.validation.EditValidation"
+               name="EditValidationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/validation/editValidation.jsp" />
+      <forward name="failure"	path="/obs-access/user/validation/editValidation.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/profile/EditContact"
+               type="com.ahsay.cbs.obs.access.user.profile.EditContact"
+               name="EditContactBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/profile/contact/editContact.jsp" />
+      <forward name="failure"	path="/obs-access/user/profile/contact/editContact.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/profile/EditAddUserGroups"
+               type="com.ahsay.cbs.obs.access.user.profile.EditAddUserGroups"
+               name="EditAddUserGroupsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/profile/assignedUserGroups/editAddUserGroups.jsp" />
+      <forward name="failure"	path="/obs-access/user/profile/assignedUserGroups/editAddUserGroups.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/profile/ResetPassword"
+               type="com.ahsay.cbs.obs.access.user.profile.ResetPassword"
+               name="ResetPasswordBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/profile/resetPassword/editResetPassword.jsp" />
+      <forward name="failure"	path="/obs-access/user/profile/resetPassword/editResetPassword.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/profile/UploadReceiverDigitalCertificate"
+               type="com.ahsay.cbs.obs.access.user.profile.UploadReceiverDigitalCertificate"
+               name="UploadReceiverDigitalCertificateForm"
+              scope="request" >
+      <forward name="success"           path="/obs-access/user/profile/contact/uploadReceiverDigitalCertificate.jsp" />
+	  <forward name="upload"           path="/obs-access/user/profile/contact/uploadReceiverDigitalCertificate.jsp?success=true" />
+      <forward name="failure"           path="/obs-access/user/profile/contact/uploadReceiverDigitalCertificate.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/EditBackupSet"
+               type="com.ahsay.cbs.obs.access.user.backupSet.EditBackupSet"
+               name="EditBackupSetBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addSource"				path="/obs/access/user/backupSet/source/EditBackupSource.do" redirect="true" />
+	  <forward name="addFilter"				path="/obs/access/user/backupSet/source/EditFilter.do" redirect="true" />
+	  <forward name="addSchedule"			path="/obs/access/user/backupSet/schedule/EditSchedule.do" redirect="true" />
+	  <forward name="addCDPFilter"			path="/obs/access/user/backupSet/cdp/EditExcludeFilter.do" redirect="true" />
+	  <forward name="addDestination"		path="/obs/access/user/backupSet/destination/EditDestination.do" redirect="true" />
+	  <forward name="addSysDestination"		path="/config/destinaton/EditDestination.do" redirect="true" />
+	  <forward name="addSysDestination2BSet" path="/obs/access/user/backupSet/destination/EditAddSysDestination.do" redirect="true" />
+	  <forward name="addCustomPolicy"		path="/obs/access/user/backupSet/retentionPolicy/EditAdvancedPolicy.do" redirect="true" />
+	  <forward name="addCommand"			path="/obs/access/user/backupSet/command/EditCommand.do" redirect="true" />
+	  <forward name="addBandwidthControl"	path="/obs/access/user/backupSet/bandwidthControl/EditBandwidthControl.do" redirect="true" />
+	  <forward name="addAllowedIP"			path="/obs/access/user/backupSet/allowedIP/EditAllowedIP.do" redirect="true" />
+	  <forward name="addBackupSet"			path="/obs/access/user/backupSet/addWizard/EditGeneral.do" redirect="true" />	  
+	  <forward name="success"				path="/obs-access/user/backupSet/editBackupSet.jsp" />
+      <forward name="failure"				path="/obs-access/user/backupSet/editBackupSet.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/source/EditBackupSource"
+               type="com.ahsay.cbs.obs.access.user.backupSet.source.EditBackupSource"
+               name="EditBackupSourceBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/source/editBackupSource.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/source/editBackupSource.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/source/EditFilter"
+               type="com.ahsay.cbs.obs.access.user.backupSet.source.EditFilter"
+               name="EditFilterBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addPattern"	path="/obs/access/user/backupSet/source/EditPattern.do" redirect="true" />
+	  <forward name="success"		path="/obs-access/user/backupSet/source/editFilter.jsp" />
+      <forward name="failure"		path="/obs-access/user/backupSet/source/editFilter.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/source/EditPattern"
+               type="com.ahsay.cbs.obs.access.user.backupSet.source.EditPattern"
+               name="EditPatternBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/source/editPattern.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/source/editPattern.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/schedule/EditSchedule"
+               type="com.ahsay.cbs.obs.access.user.backupSet.schedule.EditSchedule"
+               name="EditScheduleBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/schedule/editSchedule.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/schedule/editSchedule.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/cdp/EditExcludeFilter"
+               type="com.ahsay.cbs.obs.access.user.backupSet.cdp.EditExcludeFilter"
+               name="EditExcludeFilterBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addPattern"	path="/obs/access/user/backupSet/cdp/EditPattern.do" redirect="true" />
+	  <forward name="success"		path="/obs-access/user/backupSet/cdp/editExcludeFilter.jsp" />
+      <forward name="failure"		path="/obs-access/user/backupSet/cdp/editExcludeFilter.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/cdp/EditPattern"
+               type="com.ahsay.cbs.obs.access.user.backupSet.cdp.EditPattern"
+               name="EditPatternBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/cdp/editPattern.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/cdp/editPattern.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/destination/EditDestination"
+               type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditDestination"
+               name="EditDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addPooledDestination"	path="/obs/access/user/backupSet/destination/EditPooledDestination.do" redirect="true" />
+	  <forward name="success"				path="/obs-access/user/backupSet/destination/editDestination.jsp" />
+      <forward name="failure"				path="/obs-access/user/backupSet/destination/editDestination.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/destination/EditPooledDestination"
+               type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditPooledDestination"
+               name="EditPooledDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-access/user/backupSet/destination/editPooledDestination.jsp" />
+      <forward name="failure"			path="/obs-access/user/backupSet/destination/editPooledDestination.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/destination/EditAddSysDestination"
+               type="com.ahsay.cbs.obs.access.user.backupSet.destination.EditAddSysDestination"
+               name="EditAddSysDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-access/user/backupSet/destination/editAddSysDestination.jsp" />
+      <forward name="failure"			path="/obs-access/user/backupSet/destination/editAddSysDestination.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/retentionPolicy/EditAdvancedPolicy"
+               type="com.ahsay.cbs.obs.access.user.backupSet.retentionPolicy.EditAdvancedPolicy"
+               name="EditAdvancedPolicyBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/retentionPolicy/editAdvancedPolicy.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/retentionPolicy/editAdvancedPolicy.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/command/EditCommand"
+               type="com.ahsay.cbs.obs.access.user.backupSet.command.EditCommand"
+               name="EditCommandBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/command/editCommand.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/command/editCommand.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/bandwidthControl/EditBandwidthControl"
+               type="com.ahsay.cbs.obs.access.user.backupSet.bandwidthControl.EditBandwidthControl"
+               name="EditBandwidthControlBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/bandwidthControl/editBandwidthControl.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/bandwidthControl/editBandwidthControl.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/allowedIP/EditAllowedIP"
+               type="com.ahsay.cbs.obs.access.user.backupSet.allowedIP.EditAllowedIP"
+               name="EditAllowedIPBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/backupSet/allowedIP/editAllowedIP.jsp" />
+      <forward name="failure"	path="/obs-access/user/backupSet/allowedIP/editAllowedIP.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditGeneral"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditGeneral"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editGeneral.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editGeneral.jsp"/>
+	  <forward name="backupSource"		path="/obs/access/user/backupSet/addWizard/EditBackupSource.do" redirect="true" />
+	  <forward name="schedule"			path="/obs/access/user/backupSet/addWizard/EditSchedule.do" redirect="true" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditBackupSource"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditBackupSource"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editBackupSource.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editBackupSource.jsp"/>
+	  <forward name="general"			path="/obs/access/user/backupSet/addWizard/EditGeneral.do" redirect="true" />
+	  <forward name="schedule"			path="/obs/access/user/backupSet/addWizard/EditSchedule.do" redirect="true" />
+	  <forward name="addFilter"			path="/obs/access/user/backupSet/source/EditFilter.do" redirect="true" />
+	  <forward name="addSource"			path="/obs/access/user/backupSet/source/EditBackupSource.do" redirect="true" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditSchedule"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditSchedule"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editSchedule.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editSchedule.jsp"/>
+	  <forward name="general"			path="/obs/access/user/backupSet/addWizard/EditGeneral.do" redirect="true" />
+	  <forward name="backupSource"		path="/obs/access/user/backupSet/addWizard/EditBackupSource.do" redirect="true" />
+	  <forward name="destination"		path="/obs/access/user/backupSet/addWizard/EditDestination.do" redirect="true" />
+	  <forward name="addSchedule"		path="/obs/access/user/backupSet/schedule/EditSchedule.do" redirect="true" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditDestination"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditDestination"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editDestination.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editDestination.jsp"/>
+	  <forward name="schedule"			path="/obs/access/user/backupSet/addWizard/EditSchedule.do" redirect="true" />
+	  <forward name="encryption"		path="/obs/access/user/backupSet/addWizard/EditEncryption.do" redirect="true" />
+	  <forward name="winUserAuth"		path="/obs/access/user/backupSet/addWizard/EditWinUserAuth.do" redirect="true" />
+	  <forward name="addDestination"		 path="/obs/access/user/backupSet/destination/EditDestination.do" redirect="true" />
+	  <forward name="addSysDestination2BSet" path="/obs/access/user/backupSet/destination/EditAddSysDestination.do" redirect="true" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditEncryption"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditEncryption"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editEncryption.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editEncryption.jsp"/>
+	  <forward name="destination"		path="/obs/access/user/backupSet/addWizard/EditDestination.do" redirect="true" />
+	  <forward name="winUserAuth"		path="/obs/access/user/backupSet/addWizard/EditWinUserAuth.do" redirect="true" />
+    </action>
+	
+	<action    path="/obs/access/user/backupSet/addWizard/EditWinUserAuth"
+               type="com.ahsay.cbs.obs.access.user.backupSet.addWizard.EditWinUserAuth"
+               name="EditBackupSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-access/user/backupSet/addWizard/editWinUserAuth.jsp"/>
+      <forward name="failure"           path="/obs-access/user/backupSet/addWizard/editWinUserAuth.jsp"/>
+	  <forward name="destination"       path="/obs/access/user/backupSet/addWizard/EditDestination.do"  redirect="true"/>
+	  <forward name="encryption"        path="/obs/access/user/backupSet/addWizard/EditEncryption.do"  redirect="true"/>
+    </action>
+	
+	<action    path="/obs/access/user/report/EditBackupReport"
+               type="com.ahsay.cbs.obs.access.user.report.EditBackupReport"
+               name="EditBackupReportBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/report/editBackupReport.jsp" />
+      <forward name="failure"	path="/obs-access/user/report/editBackupReport.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/report/EditRestoreReport"
+               type="com.ahsay.cbs.obs.access.user.report.EditRestoreReport"
+               name="EditRestoreReportBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/report/editRestoreReport.jsp" />
+      <forward name="failure"	path="/obs-access/user/report/editRestoreReport.jsp" />
+    </action>
+	
+	<action    path="/obs/access/user/report/EditLog"
+               type="com.ahsay.cbs.obs.access.user.report.EditLog"
+               name="EditLogBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/obs-access/user/report/editLog.jsp" />
+      <forward name="failure"	path="/obs-access/user/report/editLog.jsp" />
+    </action>
+	
+	<action    path="/obs/access/userGroup/EditUserGroup"
+               type="com.ahsay.cbs.obs.access.userGroup.EditUserGroup"
+               name="EditUserGroupBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addPolicy"			path="/obs/access/userGroup/EditAddPolicy.do" redirect="true" />
+	  <forward name="addBillingContact" path="/obs/access/userGroup/EditBillingContact.do" redirect="true" />
+	  <forward name="success"			path="/obs-access/userGroup/editUserGroup.jsp" />
+      <forward name="failure"			path="/obs-access/userGroup/editUserGroup.jsp" />	  
+    </action>
+	
+	<action    path="/obs/access/userGroup/EditAddPolicy"
+               type="com.ahsay.cbs.obs.access.userGroup.EditAddPolicy"
+               name="EditAddPolicyBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-access/userGroup/editAddPolicy.jsp" />
+	  <forward name="failure"			path="/obs-access/userGroup/editAddPolicy.jsp" />
+	</action>
+	
+	<action    path="/obs/access/userGroup/EditBillingContact"
+               type="com.ahsay.cbs.obs.access.userGroup.EditBillingContact"
+               name="EditBillingContactBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/obs-access/userGroup/editBillingContact.jsp" />
+	  <forward name="failure"    	  path="/obs-access/userGroup/editBillingContact.jsp" />
+    </action>
+	
+	<action    path="/obs/policy/EditPolicy"
+               type="com.ahsay.cbs.obs.policy.EditPolicy"
+               name="EditPolicyBean"
+              scope="session"
+           validate="false" >	  
+	  <forward name="addPolicy"		 	  	path="/obs-policy/addPolicy.jsp" />
+	  <forward name="addUserSettingsBcc" 	path="/obs/policy/userSettings/EditBccContact.do" redirect="true" />
+	  <forward name="addBSetSettingsSysDest" path="/obs/policy/userSettings/EditAddSysDestination.do" redirect="true" />
+	  <forward name="addBSetSettingsCustDest" path="/obs/policy/userSettings/EditCustomDestination.do" redirect="true" />
+	  <forward name="addName"				path="/obs/policy/values/general/EditName.do" redirect="true" />
+	  <forward name="addLotusDomino"		path="/obs/policy/values/general/EditLotusDomino.do" redirect="true" />
+	  <forward name="addLotusNotes"			path="/obs/policy/values/general/EditLotusNotes.do" redirect="true" />
+	  <forward name="addMSSysBkp"			path="/obs/policy/values/general/EditWinSysBkp.do" redirect="true" />
+	  <forward name="addMSSysStateBkp"		path="/obs/policy/values/general/EditWinSysStateBkp.do" redirect="true" />
+	  <forward name="addMySQL"				path="/obs/policy/values/general/EditMySQL.do" redirect="true" />
+	  <forward name="addOracle"				path="/obs/policy/values/general/EditOracle.do" redirect="true" />
+	  <forward name="addVMware"				path="/obs/policy/values/general/EditVMware.do" redirect="true" />
+	  <forward name="addShadowProtect"		path="/obs/policy/values/general/EditShadowProtect.do" redirect="true" />
+	  <forward name="addWinUserAuth"		path="/obs/policy/values/general/EditWinUserAuth.do" redirect="true" />
+	  <forward name="addWin"				path="/obs/policy/values/source/EditWin.do" redirect="true" />
+	  <forward name="addFilters" 			path="/obs/policy/values/source/EditFilters.do" redirect="true" />
+	  <forward name="addAdvanced"			path="/obs/policy/values/source/EditAdvanced.do" redirect="true" />	  
+	  <forward name="addSchedule" 			path="/obs/policy/values/schedule/EditSchedules.do" redirect="true" />
+	  <forward name="addCdp" 				path="/obs/policy/values/cdp/EditCdp.do" redirect="true" />
+	  <forward name="addDestination" 		path="/obs/policy/values/destination/EditDestinations.do" redirect="true" />
+	  <forward name="addInFileDelta" 		path="/obs/policy/values/inFileDelta/EditInFileDelta.do" redirect="true" />
+	  <forward name="addRetentionPolicy" 	path="/obs/policy/values/retentionPolicy/EditRetentionPolicy.do" redirect="true" />
+	  <forward name="addCommands" 			path="/obs/policy/values/command/EditCommands.do" redirect="true" />
+	  <forward name="addReminder" 			path="/obs/policy/values/reminder/EditReminder.do" redirect="true" />
+	  <forward name="addBandwidthControls" 	path="/obs/policy/values/bandwidthControl/EditBandwidthControls.do" redirect="true" />
+	  <forward name="addAllowedIPs" 		path="/obs/policy/values/allowedIP/EditAllowedIPs.do" redirect="true" />
+	  <forward name="addTempDir" 			path="/obs/policy/values/others/EditTempDir.do" redirect="true" />
+	  <forward name="addFollowLink" 		path="/obs/policy/values/others/EditFollowLink.do" redirect="true" />
+	  <forward name="addVolumeShadowCopy"	path="/obs/policy/values/others/EditVolumeShadowCopy.do" redirect="true" />
+	  <forward name="addFilePermissions"	path="/obs/policy/values/others/EditFilePermissions.do" redirect="true" />
+	  <forward name="addArchivedLogDeletion" path="/obs/policy/values/others/EditArchivedLogDeletion.do" redirect="true" />
+	  <forward name="addCompressions" 		path="/obs/policy/values/others/EditCompressions.do" redirect="true" />
+	  <forward name="addEncryption" 		path="/obs/policy/values/others/EditEncryption.do" redirect="true" />
+	  <forward name="addBSet" 				path="/obs/policy/preemptedBSets/EditPreemptedBSet.do" redirect="true" />
+	  <forward name="successBackupUser"    	path="/obs-policy/backupUser/editPolicy.jsp" />
+	  <forward name="successSystemUser"    	path="/obs-policy/systemUser/editPolicy.jsp" />
+	  <forward name="successBilling"    	path="/obs-policy/billing/editPolicy.jsp" />
+	  <forward name="failure"         		path="/obs-policy/backupUser/editPolicy.jsp"/>
+    </action>
+	
+	<action    path="/obs/policy/userSettings/EditBccContact"
+               type="com.ahsay.cbs.obs.policy.userSettings.EditBccContact"
+               name="EditContactBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-policy/backupUser/userSettings/editBccContact.jsp" />
+	  <forward name="failure"			path="/obs-policy/backupUser/userSettings/editBccContact.jsp" />
+	</action>
+	
+	<action    path="/obs/policy/userSettings/EditAddSysDestination"
+               type="com.ahsay.cbs.obs.policy.userSettings.EditAddSysDestination"
+               name="EditAddSysDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-policy/backupUser/userSettings/editAddSysDestination.jsp" />
+	  <forward name="failure"			path="/obs-policy/backupUser/userSettings/editAddSysDestination.jsp" />
+	</action>
+	
+	<action    path="/obs/policy/userSettings/EditCustomDestination"
+               type="com.ahsay.cbs.obs.policy.userSettings.EditCustomDestination"
+               name="EditCustomDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/obs-policy/backupUser/userSettings/editCustomDestination.jsp" />
+	  <forward name="failure"			path="/obs-policy/backupUser/userSettings/editCustomDestination.jsp" />
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditName"
+               type="com.ahsay.cbs.obs.policy.values.general.EditName"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editName.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editName.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditLotusDomino"
+               type="com.ahsay.cbs.obs.policy.values.general.EditLotusDomino"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editLotusDomino.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editLotusDomino.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditLotusNotes"
+               type="com.ahsay.cbs.obs.policy.values.general.EditLotusNotes"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editLotusNotes.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editLotusNotes.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditWinSysBkp"
+               type="com.ahsay.cbs.obs.policy.values.general.EditWinSysBkp"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editWinSysBkp.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editWinSysBkp.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditWinSysStateBkp"
+               type="com.ahsay.cbs.obs.policy.values.general.EditWinSysStateBkp"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editWinSysStateBkp.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editWinSysStateBkp.jsp"/>
+	</action>
+
+	<action    path="/obs/policy/values/general/EditMySQL"
+               type="com.ahsay.cbs.obs.policy.values.general.EditMySQL"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editMySQL.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editMySQL.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditOracle"
+               type="com.ahsay.cbs.obs.policy.values.general.EditOracle"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editOracle.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editOracle.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditVMware"
+               type="com.ahsay.cbs.obs.policy.values.general.EditVMware"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editVMware.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editVMware.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/general/EditShadowProtect"
+               type="com.ahsay.cbs.obs.policy.values.general.EditShadowProtect"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editShadowProtect.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editShadowProtect.jsp"/>
+	</action>
+
+	<action    path="/obs/policy/values/general/EditWinUserAuth"
+               type="com.ahsay.cbs.obs.policy.values.general.EditWinUserAuth"
+               name="EditGeneralBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/general/editWinUserAuth.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/general/editWinUserAuth.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditWin"
+               type="com.ahsay.cbs.obs.policy.values.source.EditWin"
+               name="EditSourceBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editWin.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editWin.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditFilters"
+               type="com.ahsay.cbs.obs.policy.values.source.EditFilters"
+               name="EditSourceBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/source/EditFilter.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editFilters.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editFilters.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditFilter"
+               type="com.ahsay.cbs.obs.policy.values.source.EditFilter"
+               name="EditFilterBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/source/EditPattern.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editFilter.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editFilter.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditPattern"
+               type="com.ahsay.cbs.obs.policy.values.source.EditPattern"
+               name="EditPatternBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editPattern.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editPattern.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditAdvanced"
+               type="com.ahsay.cbs.obs.policy.values.source.EditAdvanced"
+               name="EditSourceBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/source/EditSource.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editAdvanced.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editAdvanced.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/source/EditSource"
+               type="com.ahsay.cbs.obs.policy.values.source.EditSource"
+               name="EditBackupSourceBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/source/editSource.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/source/editSource.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/schedule/EditSchedules"
+               type="com.ahsay.cbs.obs.policy.values.schedule.EditSchedules"
+               name="EditSchedulesBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/schedule/EditSchedule.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/backupSchedule/editSchedules.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/backupSchedule/editSchedules.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/schedule/EditSchedule"
+               type="com.ahsay.cbs.obs.policy.values.schedule.EditSchedule"
+               name="EditScheduleBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/backupSchedule/editSchedule.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/backupSchedule/editSchedule.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/cdp/EditCdp"
+               type="com.ahsay.cbs.obs.policy.values.cdp.EditCdp"
+               name="EditCdpBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/cdp/EditExcludeFilter.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/cdp/editCdp.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/cdp/editCdp.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/cdp/EditExcludeFilter"
+               type="com.ahsay.cbs.obs.policy.values.cdp.EditExcludeFilter"
+               name="EditExcludeFilterBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/cdp/EditPattern.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/cdp/editExcludeFilter.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/cdp/editExcludeFilter.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/cdp/EditPattern"
+               type="com.ahsay.cbs.obs.policy.values.cdp.EditPattern"
+               name="EditPatternBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/cdp/editPattern.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/cdp/editPattern.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/destination/EditDestinations"
+               type="com.ahsay.cbs.obs.policy.values.destination.EditDestinations"
+               name="EditDestinationsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="addSysDestination"		path="/obs/policy/values/destination/EditAddSysDestination.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/destination/editDestinations.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/destination/editDestinations.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/destination/EditAddSysDestination"
+               type="com.ahsay.cbs.obs.policy.values.destination.EditAddSysDestination"
+               name="EditAddSysDestinationBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/destination/editAddSysDestination.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/destination/editAddSysDestination.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/inFileDelta/EditInFileDelta"
+               type="com.ahsay.cbs.obs.policy.values.inFileDelta.EditInFileDelta"
+               name="EditInFileDeltaBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/inFileDelta/editInFileDelta.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/inFileDelta/editInFileDelta.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/retentionPolicy/EditRetentionPolicy"
+               type="com.ahsay.cbs.obs.policy.values.retentionPolicy.EditRetentionPolicy"
+               name="EditRetentionPolicyBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/retentionPolicy/EditAdvancedPolicy.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/retentionPolicy/editRetentionPolicy.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/retentionPolicy/editRetentionPolicy.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/retentionPolicy/EditAdvancedPolicy"
+               type="com.ahsay.cbs.obs.policy.values.retentionPolicy.EditAdvancedPolicy"
+               name="EditAdvancedPolicyBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/retentionPolicy/editAdvancedPolicy.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/retentionPolicy/editAdvancedPolicy.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/command/EditCommands"
+               type="com.ahsay.cbs.obs.policy.values.command.EditCommands"
+               name="EditCommandsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/command/EditCommand.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/command/editCommands.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/command/editCommands.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/command/EditCommand"
+               type="com.ahsay.cbs.obs.policy.values.command.EditCommand"
+               name="EditCommandBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/command/editCommand.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/command/editCommand.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/reminder/EditReminder"
+               type="com.ahsay.cbs.obs.policy.values.reminder.EditReminder"
+               name="EditReminderBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/reminder/editReminder.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/reminder/editReminder.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/bandwidthControl/EditBandwidthControls"
+               type="com.ahsay.cbs.obs.policy.values.bandwidthControl.EditBandwidthControls"
+               name="EditBandwidthControlsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/bandwidthControl/EditBandwidthControl.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/bandwidthControl/editBandwidthControls.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/bandwidthControl/editBandwidthControls.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/bandwidthControl/EditBandwidthControl"
+               type="com.ahsay.cbs.obs.policy.values.bandwidthControl.EditBandwidthControl"
+               name="EditBandwidthControlBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/bandwidthControl/editBandwidthControl.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/bandwidthControl/editBandwidthControl.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/allowedIP/EditAllowedIPs"
+               type="com.ahsay.cbs.obs.policy.values.allowedIP.EditAllowedIPs"
+               name="EditAllowedIPsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="create"	 	  path="/obs/policy/values/allowedIP/EditAllowedIP.do" redirect="true" />
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/allowedIP/editAllowedIPs.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/allowedIP/editAllowedIPs.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/allowedIP/EditAllowedIP"
+               type="com.ahsay.cbs.obs.policy.values.allowedIP.EditAllowedIP"
+               name="EditAllowedIPBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/allowedIP/editAllowedIP.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/allowedIP/editAllowedIP.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditTempDir"
+               type="com.ahsay.cbs.obs.policy.values.others.EditTemporaryDirectory"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editTempDir.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editTempDir.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditFollowLink"
+               type="com.ahsay.cbs.obs.policy.values.others.EditFollowLink"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editFollowLink.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editFollowLink.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditVolumeShadowCopy"
+               type="com.ahsay.cbs.obs.policy.values.others.EditVolumeShadowCopy"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editVolumeShadowCopy.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editVolumeShadowCopy.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditFilePermissions"
+               type="com.ahsay.cbs.obs.policy.values.others.EditFilePermissions"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editFilePermissions.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editFilePermissions.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditArchivedLogDeletion"
+               type="com.ahsay.cbs.obs.policy.values.others.EditArchivedLogDeletion"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editArchivedLogDeletion.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editArchivedLogDeletion.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditCompressions"
+               type="com.ahsay.cbs.obs.policy.values.others.EditCompressions"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editCompressions.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editCompressions.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/values/others/EditEncryption"
+               type="com.ahsay.cbs.obs.policy.values.others.EditEncryption"
+               name="EditOthersBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-policy/backupUser/values/others/editEncryption.jsp" />
+	  <forward name="failure"         path="/obs-policy/backupUser/values/others/editEncryption.jsp"/>
+	</action>
+	
+	<action    path="/obs/policy/preemptedBSets/EditPreemptedBSet"
+               type="com.ahsay.cbs.obs.policy.preemptedBSets.EditPreemptedBSet"
+               name="EditBackupSetBean"
+              scope="session"
+           validate="false" >		   
+	  <forward name="addSource"				path="/obs/access/user/backupSet/source/EditBackupSource.do" redirect="true" />
+	  <forward name="addFilter"				path="/obs/access/user/backupSet/source/EditFilter.do" redirect="true" />
+	  <forward name="addSchedule"			path="/obs/access/user/backupSet/schedule/EditSchedule.do" redirect="true" />
+	  <forward name="addCDPFilter"			path="/obs/access/user/backupSet/cdp/EditExcludeFilter.do" redirect="true" />
+	  <forward name="addDestination"		path="/obs/access/user/backupSet/destination/EditDestination.do" redirect="true" />
+	  <forward name="addSysDestination"		path="/system/config/destination/EditDestination.do" redirect="true" />
+	  <forward name="addSysDestination2BSet" path="/obs/access/user/backupSet/destination/EditAddSysDestination.do" redirect="true" />
+	  <forward name="addCustomPolicy"		path="/obs/access/user/backupSet/retentionPolicy/EditAdvancedPolicy.do" redirect="true" />
+	  <forward name="addCommand"			path="/obs/access/user/backupSet/command/EditCommand.do" redirect="true" />
+	  <forward name="addBandwidthControl"	path="/obs/access/user/backupSet/bandwidthControl/EditBandwidthControl.do" redirect="true" />
+	  <forward name="addAllowedIP"			path="/obs/access/user/backupSet/allowedIP/EditAllowedIP.do" redirect="true" />
+	  <forward name="addBackupSet"    		path="/obs/access/user/backupSet/addWizard/EditGeneral.do?preempted=Y" redirect="true" />
+	  <forward name="successWindows"    	path="/obs-policy/backupUser/preemptedBSets/windows/editPreemptedBSet.jsp" />
+	  <forward name="successUnix"    	  	path="/obs-policy/backupUser/preemptedBSets/unix/editPreemptedBSet.jsp" />
+	  <forward name="failure"         		path="/obs-policy/backupUser/preemptedBSets/windows/editPreemptedBSet.jsp"/>
+	</action>
+	
+	<!-- Billing Module -->
+	<action    path="/obs/bill/BillingIndex"
+               type="com.ahsay.cbs.obs.bill.BillingIndex"
+               name="BillingIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/obs-bill/index.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+	  <forward name="create_package"    	  path="/obs/bill/billPackage/EditPackage.do" redirect="true"/>
+    </action>
+	
+	<action    path="/obs/bill/billPackage/ListPackages"
+               type="com.ahsay.cbs.obs.bill.billPackage.ListPackages"
+               name="ListPackagesBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/obs-bill/billPackage/listPackages.jsp" />
+    </action>
+	
+	<action    path="/obs/bill/billPackage/EditPackage"
+               type="com.ahsay.cbs.obs.bill.billPackage.EditPackage"
+               name="EditPackageBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/obs-bill/billPackage/editPackage.jsp" />
+	  <forward name="create"    	  path="/obs/bill/EditMonthlyUsage.do" redirect="true"/>
+    </action>
+	
+	<action    path="/obs/bill/billPackage/EditMonthlyUsage"
+               type="com.ahsay.cbs.obs.bill.billPackage.EditMonthlyUsage"
+               name="EditMonthlyUsageBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"    	  path="/obs-bill/billPackage/editMonthlyUsage.jsp" />
+    </action>
+	
+	<action    path="/obs/bill/setting/EditSettings"
+               type="com.ahsay.cbs.obs.bill.setting.EditSettings"
+               name="EditSettingsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-bill/setting/editSettings.jsp" />
+    </action>
+	
+	<action    path="/obs/bill/paymentHistory/ListPaymentHistory"
+               type="com.ahsay.cbs.obs.bill.paymentHistory.ListPaymentHistory"
+               name="ListPaymentHistoryBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-bill/paymentHistory/listPaymentHistory.jsp" />
+    </action>
+
+	<action    path="/obs/bill/paymentHistory/ShowPaymentStatement"
+               type="com.ahsay.cbs.obs.bill.paymentHistory.ShowPaymentStatement"
+               name="ShowPaymentStatementBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"    	  path="/obs-bill/paymentHistory/showPaymentStatement.jsp" />
+    </action>
+	
+	<!-- Show System Status -->
+	<action    path="/system/system/showThreads"
+               type="com.ahsay.cbs.system.system.ShowThreads"
+               name="ShowThreadsBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/system/showThreads.jsp" />
+      <forward name="failure"			path="/system/system/showThreads.jsp" />
+    </action>
+
+	<!-- Edit Config -->
+	<action    path="/system/config/email/editEmailServerSetting"
+               type="com.ahsay.cbs.system.config.email.EditEmailServerSetting"
+               name="EditEmailServerSettingBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/config/email/editEmailServerSetting.jsp" />
+      <forward name="failure"			path="/system/config/email/editEmailServerSetting.jsp" />
+    </action>
+	
+	<action    path="/system/config/system/editServerSetting"
+               type="com.ahsay.cbs.system.config.system.EditServerSetting"
+               name="EditServerSettingBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/config/system/editServerSetting.jsp" />
+      <forward name="failure"			path="/system/config/system/editServerSetting.jsp" />
+    </action>
+	
+    <action    path="/system/config/email/editAdminContact"
+               type="com.ahsay.cbs.system.config.email.EditAdminContact"
+               name="EditAdminContactBean"
+              scope="session"
+			validate="false">
+      <forward name="success"           path="/system/config/email/editAdminContact.jsp"/>
+      <forward name="failure"           path="/system/config/email/editAdminContact.jsp"/>
+    </action>
+	
+	<action    path="/system/config/languages/EditLanguage"
+               type="com.ahsay.cbs.system.config.languages.EditLanguage"
+               name="EditLanguageBean"
+			validate="false">
+      <forward name="success"           path="/system/config/languages/editLanguage.jsp"/>
+      <forward name="failure"           path="/system/config/languages/editLanguage.jsp"/>
+    </action>
+
+    <action    path="/system/advanced/proxy/EditProxyExcludeHost"
+               type="com.ahsay.cbs.system.advanced.proxy.EditProxyExcludeHost"
+               name="EditProxyExcludeHostBean"
+			validate="false">
+      <forward name="success"           path="/system/advanced/proxy/proxyExcludeHost.jsp"/>
+      <forward name="failure"           path="/system/advanced/proxy/proxyExcludeHost.jsp"/>
+    </action>	
+	
+    <action    path="/system/config/accounts/EditSysUser"
+               type="com.ahsay.cbs.system.config.accounts.EditSysUser"
+               name="EditSysUserBean"
+			validate="false">
+	  <forward name="addSysUser"		path="/system/config/accounts/addSysUser.jsp" />
+	  <forward name="addDelegateAdmin"  path="/system/config/accounts/AddDelegateAdmin.do" redirect="true" />
+	  <forward name="addUserHome"	    path="/system/config/accounts/EditAddUserHome.do" redirect="true" />
+	  <forward name="importBranding"	path="/system/config/accounts/ImportBranding.do" redirect="true" />	  
+      <forward name="success"           path="/system/config/accounts/editSysUser.jsp"/>
+	  <forward name="triggerOK"    		path="/system/ShowConfiguration.do" redirect="true" />
+	  <forward name="triggerCancel"		path="/system/ShowConfiguration.do" redirect="true" />
+    </action>
+	
+    <action    path="/system/config/accounts/AddDelegateAdmin"
+               type="com.ahsay.cbs.system.config.accounts.AddDelegateAdmin"
+               name="AddDelegateAdminBean"
+			validate="false">
+      <forward name="success"            path="/system/config/accounts/addDelegateAdmin.jsp"/>
+	  <forward name="failure"            path="/system/config/accounts/addDelegateAdmin.jsp"/>
+    </action>
+	
+	<action    path="/system/config/accounts/EditAddUserHome"
+               type="com.ahsay.cbs.system.config.accounts.EditAddUserHome"
+               name="EditAddUserHomeBean"
+			validate="false">
+      <forward name="success"            path="/system/config/accounts/editAddUserHome.jsp"/>
+	  <forward name="failure"            path="/system/config/accounts/editAddUserHome.jsp"/>
+    </action>
+	
+	<action    path="/system/config/accounts/EditProperties"
+               type="com.ahsay.cbs.system.config.accounts.EditProperties"
+               name="EditPropertiesBean"
+              scope="session"
+			validate="false">
+      <forward name="success"           path="/system/config/accounts/editProperties.jsp"/>
+      <forward name="failure"           path="/system/config/accounts/editProperties.jsp"/>
+    </action>
+    
+	<action    path="/system/config/accounts/ImportBranding"
+               type="com.ahsay.cbs.system.config.accounts.ImportBranding"
+               name="ImportBrandingBean"
+              scope="session"
+			validate="false">
+      <forward name="success"           path="/system/config/accounts/importBranding.jsp"/>
+      <forward name="failure"           path="/system/config/accounts/importBranding.jsp"/>
+	  <forward name="triggerImport"		path="/system/ShowConfiguration.do" redirect="true" />
+	  <forward name="triggerCancel"		path="/system/config/accounts/EditSysUser.do" redirect="true" />
+    </action>
+	<action    path="/system/config/accounts/broadcast/EditSysBroadcast"
+               type="com.ahsay.cbs.system.config.accounts.broadcast.EditSysBroadcast"
+               name="EditSysBroadcastBean"
+              scope="session"
+           validate="false" >
+	  <forward name="sendSuccess"	path="/system/config/accounts/editBroadcast.jsp?success=true"/>
+	  <forward name="success"		path="/system/config/accounts/editBroadcast.jsp" />
+      <forward name="failure"		path="/system/config/accounts/editBroadcast.jsp" />
+    </action>
+	
+    <action    path="/system/config/cert/NewSsl"
+               type="com.ahsay.cbs.system.config.cert.NewSsl"
+               name="NewSslBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/config/cert/newSsl.jsp" />
+	  <forward name="editSsl"		path="/system/config/cert/EditSsl.do" redirect="true"/>
+      <forward name="failure"			path="/system/config/cert/newSsl.jsp" />
+    </action>
+	
+	<action    path="/system/config/cert/EditSsl"
+               type="com.ahsay.cbs.system.config.cert.EditSsl"
+               name="NewSslBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"	path="/system/config/cert/editSsl.jsp" />
+      <forward name="failure"	path="/system/config/cert/editSsl.jsp" />
+	  <forward name="newSsl"			path="/system/config/cert/NewSsl.do" redirect="true"/>	
+    </action>
+	
+	<!-- Edit Advanced -->
+	<action    path="/system/advanced/debug/editDebug"
+               type="com.ahsay.cbs.system.advanced.debug.EditDebug"
+               name="EditDebugBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/advanced/debug/editDebug.jsp" />
+      <forward name="failure"			path="/system/advanced/debug/editDebug.jsp" />
+    </action>
+	
+	<action    path="/system/advanced/allowedIP/editAllowedIPOnServer"
+               type="com.ahsay.cbs.system.advanced.allowedIP.EditAllowedIPOnServer"
+               name="EditAllowedIPOnServerBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/system/advanced/allowedIP/editAllowedIPOnServer.jsp" />
+      <forward name="failure"			path="/system/advanced/allowedIP/editAllowedIPOnServer.jsp" />
+    </action>
+	
+	<!-- Show CBS System Log -->
+	<action    path="/monitor/cbs/showSystemLog"
+               type="com.ahsay.cbs.monitor.cbs.ShowSystemLog"
+               name="ShowCbsSystemLogBean"
+              scope="session"
+           validate="false" >
+	  <forward name="success"			path="/monitor/cbs/systemLog.jsp" />
+      <forward name="failure"			path="/monitor/cbs/systemLog.jsp" />
+    </action>	
+	
+    <action    path="/system/config/EditUserHome"
+               type="com.ahsay.cbs.obs.config.EditUserHome"
+               name="EditUserHomeBean"
+			validate="false">
+      <forward name="success"           path="/obs-config/editUserHome.jsp"/>
+      <forward name="failure"           path="/obs-config/editUserHome.jsp"/>
+    </action>		
+	
+    <action    path="/system/config/destination/EditDestination"
+               type="com.ahsay.cbs.system.config.destination.EditDestination"
+               name="EditDestinationBean"
+			   scope="session"
+			validate="false">
+	  <forward name="addPooledDestination"	path="/system/config/destination/EditPooledDestination.do" redirect="true" />
+      <forward name="success"           path="/system/config/destination/editDestination.jsp"/>
+      <forward name="failure"           path="/system/config/destination/editDestination.jsp"/>
+    </action>	
+	
+    <action    path="/system/config/destination/EditPooledDestination"
+               type="com.ahsay.cbs.system.config.destination.EditPooledDestination"
+               name="EditPooledDestinationBean"
+			validate="false">
+      <forward name="success"           path="/system/config/destination/editPooledDestination.jsp"/>
+      <forward name="failure"           path="/system/config/destination/editPooledDestination.jsp"/>
+    </action>
+		
+    <action    path="/obs/replicate/EditTrafficLimit"
+               type="com.ahsay.cbs.obs.replicate.EditTrafficLimit"
+               name="editObsTrafficLimitBean"
+			validate="false">
+      <forward name="success"           path="/obs-replicate/trafficLimit.jsp"/>
+      <forward name="failure"           path="/obs-replicate/trafficLimit.jsp"/>
+    </action>	
+
+    <action    path="/obs/replicate/AddRepUser"
+               type="com.ahsay.cbs.obs.replicate.AddRepUser"
+               name="AddRepUserBean"
+			validate="false">
+      <forward name="success"           path="/obs-replicate/repUser.jsp"/>
+      <forward name="failure"           path="/obs-replicate/repUser.jsp"/>
+	  <forward name="bset"				path="/obs/replicate/AddRepBSet.do" redirect="true" />
+    </action>	
+	
+    <action    path="/obs/replicate/AddRepBSet"
+               type="com.ahsay.cbs.obs.replicate.AddRepBSet"
+               name="AddRepBSetBean"
+			validate="false">
+      <forward name="success"           path="/obs-replicate/repBSet.jsp"/>
+      <forward name="failure"           path="/obs-replicate/repBSet.jsp"/>
+	  <forward name="user"				path="/obs/replicate/AddRepUser.do" redirect="true" />
+    </action>			
+	
+    <action    path="/system/advanced/EditRestoreSetting"
+               type="com.ahsay.cbs.system.advanced.EditRestoreSetting"
+               name="EditRestoreSettingBean"
+			validate="false">
+      <forward name="success"           path="/system/advanced/restoreSetting.jsp"/>
+      <forward name="failure"           path="/system/advanced/restoreSetting.jsp"/>
+    </action> 
+	
+	<!-- Test License Server Connection-->
+    <action    path="/system/lic/obs/TestLicConn"
+               type="com.ahsay.cbs.system.lic.obs.TestLicConn"
+               name="ShowLicenseIndexBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+    <action    path="/system/lic/obs/UpdateLic"
+               type="com.ahsay.cbs.system.lic.obs.UpdateLic"
+               name="ShowLicenseIndexBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Test Proxy -->
+    <action    path="/system/advanced/proxy/TestProxy"
+               type="com.ahsay.cbs.system.advanced.proxy.TestProxy"
+               name="ShowConfigurationIndexBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Test SNMP Connection-->
+    <action    path="/system/config/snmp/TestSnmp"
+               type="com.ahsay.cbs.system.config.snmp.TestSnmp"
+               name="ShowConfigurationIndexBean"
+              scope="session"
+           validate="false">
+    </action>		
+	
+	<!-- Test Redirector Connection-->
+    <action    path="/obs/redirect/TestRdrConn"
+               type="com.ahsay.cbs.obs.redirect.TestRdrConn"
+               name="ObsRedirectIndexBean"
+              scope="session"
+           validate="false">
+    </action>		
+	
+	<!-- Test Destination -->
+    <action    path="/system/config/TestDestination"
+               type="com.ahsay.cbs.system.config.destination.TestDestination"
+               name="EditDestinationBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Test Pooled Destination -->
+    <action    path="/system/config/TestPooledDestination"
+               type="com.ahsay.cbs.system.config.destination.TestDestination"
+               name="EditPooledDestinationBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Test Obs Server Connection-->
+    <action    path="/rdr/config/system/TestObsServerConn"
+               type="com.ahsay.cbs.rdr.config.system.TestObsServerConn"
+               name="EditBackupServerBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Test Smtp Connection-->
+    <action    path="/system/config/email/TestSmtpConn"
+               type="com.ahsay.cbs.system.config.email.TestSmtpConn"
+               name="EditEmailServerSettingBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<!-- Build Installer -->
+    <action    path="/system/config/accounts/BuildInstaller"
+               type="com.ahsay.cbs.system.config.accounts.BuildInstaller"
+               name="EditSysUserBean"
+              scope="session"
+           validate="false">
+    </action>
+	
+	<!-- Download Log -->
+    <action    path="/system/config/accounts/DownloadLog"
+               type="com.ahsay.cbs.system.config.accounts.DownloadLog"
+               name="EditSysUserBean"
+              scope="session"
+           validate="false">
+    </action>
+	
+	<!-- Download File -->
+    <action    path="/system/config/accounts/DownloadFile"
+               type="com.ahsay.cbs.system.config.accounts.DownloadFile"
+               name="EditSysUserBean"
+              scope="session"
+           validate="false">
+    </action>
+	
+	<!-- Rps-->
+	<action    path="/monitor/rps/Index"
+               type="com.ahsay.cbs.monitor.rps.Index"
+               name="RpsMonitorIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/rps/index.jsp" />
+      <forward name="failure"	path="/redirect2Logon.jsp" />
+    </action>
+	
+	
+	<action    path="/monitor/rps/ShowSystemLog"
+               type="com.ahsay.cbs.monitor.rps.ShowSystemLog"
+               name="ShowRpsSystemLogBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/rps/systemLog.jsp" />
+      <forward name="failure"	path="/redirect2Logon.jsp" />
+    </action>
+	
+	<action    path="/monitor/rps/ShowRpsReplicationLog"
+               type="com.ahsay.cbs.monitor.rps.ShowRpsReplicationLog"
+               name="ShowRpsReplicationLogBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/rps/rpsReplicationLog.jsp" />
+      <forward name="failure"	path="/redirect2Logon.jsp" />
+    </action>
+	
+	<action    path="/rps/config/Index"
+               type="com.ahsay.cbs.rps.config.Index"
+               name="RpsConfigIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/index.jsp" />
+	  <forward name="create_receiver"	path="/rps/config/receiver/NewReceiver.do" redirect="true"/>
+	  <forward name="add_email_server"	path="/rps/config/system/AddEmailServer.do" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/system/EditServerConfig"
+               type="com.ahsay.cbs.rps.config.system.EditServerConfig"
+               name="EditRpsServerConfigBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/system/editServerConfig.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/system/AddEmailServer"
+               type="com.ahsay.cbs.rps.config.system.AddEmailServer"
+               name="AddRpsEmailServerBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/system/addEmailServer.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+
+	<action    path="/rps/config/receiver/ListReceivers"
+               type="com.ahsay.cbs.rps.config.receiver.ListReceivers"
+               name="ListReceiversBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/listReceivers.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/EditReceiver"
+               type="com.ahsay.cbs.rps.config.receiver.EditReceiver"
+               name="EditReceiverBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/editReceiver.jsp" />
+	  <forward name="create_traffic_limit"	path="/rps/config/receiver/EditTrafficLimit.do" redirect="true" />
+	  <forward name="create_ip_restriction"	path="/rps/config/receiver/EditIPRestriction.do" redirect="true" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/NewReceiver"
+               type="com.ahsay.cbs.rps.config.receiver.NewReceiver"
+               name="EditReceiverBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/newReceiver.jsp" />
+	  <forward name="homeDir"	path="/rps/config/receiver/AddReceiver.do" redirect="true"/>
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/AddReceiver"
+               type="com.ahsay.cbs.rps.config.receiver.AddReceiver"
+               name="EditReceiverBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/addReceiverHome.jsp" />
+	  <forward name="recv"	path="/rps-config/receiver/newReceiver.jsp" />	  
+	  <forward name="homeDir"	path="/rps/config/receiver/AddReceiverHome.do" redirect="true"/>
+      <forward name="failure"	path="/rps/config/receiver/NewReceiver.do" redirect="true"/>
+    </action>
+	
+	<action    path="/rps/config/receiver/AddReceiverHome"
+               type="com.ahsay.cbs.rps.config.receiver.AddReceiverHome"
+               name="EditReceiverBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps/config/receiver/ListReceivers.do" redirect="true"/>
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/EditTrafficLimit"
+               type="com.ahsay.cbs.rps.config.receiver.EditTrafficLimit"
+               name="EditRpsTrafficLimitBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/editTrafficLimit.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/RestoreSnapshot"
+               type="com.ahsay.cbs.rps.config.receiver.RestoreSnapshot"
+               name="RestoreSnapshotBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/restoreSnapshot.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rps/config/receiver/EditIPRestriction"
+               type="com.ahsay.cbs.rps.config.receiver.EditIPRestriction"
+               name="EditIPRestrictionBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rps-config/receiver/editIPRestriction.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+
+	<action    path="/obs/replicate/Index"
+               type="com.ahsay.cbs.obs.replicate.Index"
+               name="ObsReplicateIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="createLimit"	  path="/obs/replicate/EditTrafficLimit.do" redirect="true" />
+          <forward name="addRepUser"	  path="/obs/replicate/AddRepUser.do" redirect="true" />
+          <forward name="success"    	  path="/obs-replicate/index.jsp" />
+          <forward name="failure"    	  path="/obs-replicate/index.jsp" />
+	</action>
+
+	<action    path="/obs/redirect/Index"
+               type="com.ahsay.cbs.obs.redirect.Index"
+               name="ObsRedirectIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"    	  path="/obs-redirect/index.jsp" />
+          <forward name="failure"    	  path="/obs-redirect/index.jsp" />
+	</action>
+
+	<!-- RDR -->
+	<action    path="/monitor/rdr/Index"
+               type="com.ahsay.cbs.monitor.rdr.Index"
+               name="RdrMonitorIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/rdr/index.jsp" />
+      <forward name="failure"	path="/redirect2Logon.jsp" />
+    </action>
+	
+	<action    path="/monitor/rdr/ShowSystemLog"
+               type="com.ahsay.cbs.monitor.rdr.ShowSystemLog"
+               name="ShowRdrSystemLogBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/monitor/rdr/systemLog.jsp" />
+      <forward name="failure"	path="/redirect2Logon.jsp" />
+    </action>
+	
+	<action    path="/rdr/config/Index"
+               type="com.ahsay.cbs.rdr.config.Index"
+               name="RdrConfigIndexBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rdr-config/index.jsp" />
+	  <forward name="addEmailServer"	path="/rdr/config/system/AddEmailServer.do"  redirect="true" />
+	  <forward name="editBackupServer"		  path="/rdr/config/system/EditBackupServer.do" redirect="true" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rdr/config/system/EditServerConfig"
+               type="com.ahsay.cbs.rdr.config.system.EditServerConfig"
+               name="EditRdrServerConfigBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rdr-config/system/editServerConfig.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+
+	<action    path="/rdr/config/system/AddEmailServer"
+               type="com.ahsay.cbs.rdr.config.system.AddEmailServer"
+               name="AddRdrEmailServerBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rdr-config/system/addEmailServer.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/rdr/config/system/EditBackupServer"
+               type="com.ahsay.cbs.rdr.config.system.EditBackupServer"
+               name="EditBackupServerBean"
+              scope="session"
+           validate="false" >
+      <forward name="success"	path="/rdr-config/system/editBackupServer.jsp" />
+      <forward name="failure"	path="/login.jsp" />
+    </action>
+	
+	<action    path="/system/lic/rdr/TestLicConn"
+               type="com.ahsay.cbs.system.lic.rdr.TestLicConn"
+               name="ShowLicenseIndexBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<action    path="/system/lic/rdr/UpdateLic"
+               type="com.ahsay.cbs.system.lic.rdr.UpdateLic"
+               name="ShowLicenseIndexBean"
+              scope="session"
+           validate="false">
+    </action>	
+	
+	<action    path="/Logon"
+               type="com.ahsay.cbs.Logon"
+               name="LogonForm"
+              scope="session"
+           validate="false" >
+          <forward name="success"			path="/index.do" redirect="true"/>
+		  <forward name="user"				path="/index.do" />
+          <forward name="failure"			path="/logon.jsp" />
+          <forward name="notSupportBrowser"	path="/browserNotSupported.jsp" />
+	</action>	
+	
+	<action    path="/Logout"
+               type="com.ahsay.cbs.Logout"
+               name="LogonForm"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/redirect2Logon.jsp" />
+          <forward name="failure"	path="/redirect2Logon.jsp" />
+	</action>	
+
+    <action    path="/GetForgotPwd"
+               type="com.ahsay.cbs.GetForgotPwd"
+               name="GetForgotPwdForm"
+              scope="request" >
+      <forward name="success"           path="/forgotPwd.jsp" />
+      <forward name="failure"           path="/forgotPwd.jsp" />
+    </action>	
+	
+	<action    path="/system/config/email/UploadDigitalCertificate"
+               type="com.ahsay.cbs.system.config.email.UploadDigitalCertificate"
+               name="UploadDigitalCertificateForm"
+              scope="request" >
+      <forward name="success"           path="/system/config/email/uploadDigitalCertificate.jsp" />
+	  <forward name="upload"           path="/system/config/email/uploadDigitalCertificate.jsp?success=true" />
+      <forward name="failure"           path="/system/config/email/uploadDigitalCertificate.jsp" />
+    </action>
+	
+	<action    path="/SetContext"
+               type="com.ahsay.cbs.SetContext">
+    </action>
+	
+	<action    path="/help/ShowHelp"
+               type="com.ahsay.cbs.help.Index"
+               name="ShowHelpIndexBean"
+              scope="session"
+           validate="false" >
+          <forward name="success"	path="/help/en/Help.jsp" />
+          <forward name="failure"	path="/help/en/Help.jsp" />
+	</action>
+	
+	<action    path="/system/advanced/restore/DownloadSystemFile"
+               type="com.ahsay.cbs.system.advanced.restore.DownloadSystemFile"
+               name="ShowSystemFileBean"
+              scope="session"
+           validate="false">
+      <forward name="success"           path="/system/ShowAdvanced.do" redirect="true"/>
+      <forward name="failure"           path="/system/ShowAdvanced.do" redirect="true"/>
+    </action>
+	
+    <action    path="/system/config/cert/UploadCertificate"
+               type="com.ahsay.cbs.system.config.cert.UploadCertificate"
+               name="UploadCertificateForm"
+              scope="request" >
+      <forward name="success"           path="/system/config/cert/uploadCertificate.jsp" />
+	  <forward name="upload"           path="/system/config/cert/uploadCertificate.jsp?success=true" />
+      <forward name="failure"           path="/system/config/cert/uploadCertificate.jsp" />
+    </action>
+	
+    <!-- ================================================================== -->
+    <!-- ================ API Action Mapping Definitions ================== -->
+    <!-- ================================================================== -->
+
+	<action	   path="/api/json/GetSystemStatus"
+			   type="com.ahsay.cbs.api.json.system.GetSystemStatus">
+	</action>
+
+	<action	   path="/api/json/GetUserStatus"
+			   type="com.ahsay.cbs.api.json.system.GetUserStatus">
+	</action>
+
+	<action	   path="/api/json/GetReplicationStatus"
+			   type="com.ahsay.cbs.api.json.system.GetReplicationStatus">
+	</action>
+
+	<action	   path="/api/json/GetRedirectionStatus"
+			   type="com.ahsay.cbs.api.json.system.GetRedirectionStatus">
+	</action>
+
+	<action	   path="/api/json/UpdateConfig"
+			   type="com.ahsay.cbs.api.json.system.UpdateConfig">
+	</action>
+
+	<action	   path="/api/json/UpdateBranding"
+			   type="com.ahsay.cbs.api.json.system.UpdateBranding">
+	</action>
+	
+	<action	   path="/api/json/GetBuildingStatus"
+			   type="com.ahsay.cbs.api.json.system.GetBuildingStatus">
+	</action>
+  </action-mappings>
+ 
+  <message-resources parameter="atl-jsp" null="false" />
+  <message-resources parameter="cbs-jsp" null="false" />
+
+</struts-config>
