@@ -1,4 +1,4 @@
-# DESCRIPTION:	Ahsay OBSR image
+# DESCRIPTION:	Ahsay CBS image
 # TO RUN (interactive):	docker run -it --name obsr -p 80:80 -p 443:443 -v /tmp/obsr/userhome:/obsr/user -v /tmp/obsr/system:/obsr/system yoff/obsr
 
 FROM debian:latest
