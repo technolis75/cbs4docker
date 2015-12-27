@@ -65,4 +65,4 @@ RUN chmod -R 755 tomcat/bin
 # Add docker entrypoint
 COPY tmux.sh ./
 RUN chmod +x tmux.sh
-ENTRYPOINT ["/obsr/tmux.sh"]
+ENTRYPOINT ["/usr/local/cbs/tmux.sh"]
