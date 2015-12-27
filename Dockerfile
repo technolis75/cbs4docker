@@ -46,7 +46,7 @@ RUN set -x && \
 #    2 Prevent OBSR from daemonizing
 #    3 Restrict OBSR cipher suites (resolves weak Diffie-Helman)
 RUN set -x && \
-    rm -rf $home/java-linux-x86/ && \
+    rm -rf $CBS_HOME/java-linux-x86/ && \
     sed -i 's|nohup sh "${CATALINA_HOME}/bin/catalina.sh" start > /dev/null 2>&1 &|sh "${CATALINA_HOME}/bin/catalina.sh" run|' bin/startup.sh && \
     sed -i 's|port="443"|port="443" ciphers="SSL_RSA_WITH_RC4_128_MD5,SSL_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA"|' conf/server.xml
 
