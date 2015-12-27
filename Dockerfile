@@ -7,7 +7,7 @@ MAINTAINER HB <harry.bonneto@technolis.fr>
 
 # Prepare the OS
 #    net-tools for ifconfig (OBSR uses it to get MAC address for licensing)
-#    tmux to allow shell along side OBSR
+#    tmux to allow shell along side CBS
 #    nano because editing with vi hurts
 #    curl to download over https with invalid cert
 RUN set -x && \
@@ -41,10 +41,10 @@ RUN set -x && \
     rm cbs-nix.tar.gz
 
 
-# OBSR tweaks
+# CBS tweaks
 #    1 Remove java x86
-#    2 Prevent OBSR from daemonizing
-#    3 Restrict OBSR cipher suites (resolves weak Diffie-Helman)
+#    2 Prevent CBS from daemonizing
+#    3 Restrict CBS cipher suites (resolves weak Diffie-Helman)
 RUN set -x && \
     rm -rf $CBS_HOME/java-linux-x86/ && \
     sed -i 's|nohup sh "${CATALINA_HOME}/bin/catalina.sh" start > /dev/null 2>&1 &|sh "${CATALINA_HOME}/bin/catalina.sh" run|' bin/startup.sh && \
